@@ -1,0 +1,20 @@
+{
+  "name": "@email-types/data",
+  "version": "1.0.0",
+  "description": "@email-types/data",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "dist",
+    "index.d.ts",
+    "index.js",
+    "mso.d.ts",
+    "mso.js"
+  ],
+  "scripts": {
+    "build": "tsc --build"
+  },
+  "author": "buames",
+  "repository": "https://github.com/email-types/email-types",
+  "license": "MIT"
+}

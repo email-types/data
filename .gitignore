@@ -1,0 +1,17 @@
+# dependencies
+node_modules
+*.lock
+
+# build
+dist
+tsconfig.tsbuildinfo
+
+# test
+coverage
+
+# logs
+npm-debug.log
+yarn-error.log
+
+# dumb
+.DS_Store

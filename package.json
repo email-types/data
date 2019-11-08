@@ -1,0 +1,69 @@
+{
+  "private": true,
+  "name": "email-types",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "postinstall": "lerna bootstrap",
+    "clean": "rm -rf ./packages/*/dist && rm -rf ./{,*/,**/*/}*.tsbuildinfo",
+    "clean:prune": "yarn run clean && rm -rf ./{,*/,**/*/}{node_modules,coverage,*.lock,*.log}",
+    "build": "yarn run clean && lerna run build --stream --ignore=@email-types/scripts && yarn run types",
+    "test": "yarn run build && yarn run lint && yarn run jest:coverage",
+    "jest": "jest --colors --logHeapUsage",
+    "jest:coverage": "yarn run jest --coverage",
+    "lint": "yarn run eslint .",
+    "eslint": "eslint --color --ext .ts,.js --report-unused-disable-directives",
+    "pretty": "prettier --write ./{,*/,**/}*.{js,ts,md,json}",
+    "types": "tsc --build packages/*/tsconfig.json",
+    "release": "yarn run build && lerna publish",
+    "release:publish": "lerna publish from-git",
+    "release:version": "lerna version --conventional-commits --changelog-preset conventional-changelog-beemo --create-release github --push",
+    "canary:version": "lerna version prerelease --preid canary --conventional-commits --changelog-preset conventional-changelog-beemo --create-release github --push",
+    "emailtypes": "yarn workspace @email-types/scripts build"
+  },
+  "lint-staged": {
+    "**/*.md": [
+      "yarn run prettier",
+      "git add"
+    ],
+    "**/*.ts": [
+      "yarn run prettier",
+      "yarn run lint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "devDependencies": {
+    "@postmates/eslint-config": "^5.1.1",
+    "@types/eslint": "^6.1.1",
+    "@types/jest": "^24.0.22",
+    "@types/node": "^12.11.1",
+    "@types/prettier": "^1.18.3",
+    "@typescript-eslint/eslint-plugin": "^2.6.0",
+    "@typescript-eslint/parser": "^2.6.0",
+    "conventional-changelog-beemo": "^1.5.1",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^23.0.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "husky": "^3.0.9",
+    "jest": "^24.9.0",
+    "lerna": "^3.18.3",
+    "lint-staged": "^9.4.2",
+    "prettier": "^1.18.2",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.6.4"
+  },
+  "author": "buames",
+  "repository": "https://github.com/email-types/email-types",
+  "license": "MIT"
+}

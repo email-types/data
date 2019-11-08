@@ -1,0 +1,27 @@
+name: Test
+on:
+  push:
+    branches:
+      - '*'
+      - '*/*'
+      - '!master'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [10, 11, 12]
+      fail-fast: true
+    name: Jest & EsLint @ Node ${{ matrix.node }}
+    steps:
+      - uses: actions/checkout@master
+      - name: Setup node
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - name: Install dependencies and build all files
+        uses: ./.github/actions/setup
+      - name: Run eslint
+        run: yarn run lint --quiet
+      - name: Run test
+        run: yarn run jest
