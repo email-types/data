@@ -1,4 +1,4 @@
-import { cssDataType } from '@email-types/data/mso';
+import { types as cssData } from '@email-types/data/mso';
 import {
   globalsString,
   globalsNumber,
@@ -7,7 +7,7 @@ import {
 } from './constants';
 
 export const getCssDataTypes = <T extends object>(): Record<string, T> => {
-  const cssDataTypes = cssDataType.reduce((results, name) => {
+  const cssDataTypes = cssData.reduce((results, name) => {
     if (name === 'number' || name === 'integer') {
       results[name] = {
         type: DataType.Number,

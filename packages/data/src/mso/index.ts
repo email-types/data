@@ -7,6 +7,8 @@ export * from './data/syntaxes';
 export * from './data/types';
 export * from './types';
 
+export { alternatives, fonts, standard };
+
 export const properties = {
   ...alternatives,
   ...fonts,

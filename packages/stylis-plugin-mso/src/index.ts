@@ -1,5 +1,4 @@
-// TODO: make this import better
-import { alternatives } from '@email-types/data/dist/mso/data/alternatives';
+import { alternatives } from '@email-types/data/mso';
 
 // TODO: More test
 // TODO: Finish docmentation
