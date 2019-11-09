@@ -1,7 +1,6 @@
 // TODO: make this import better
 import { alternatives } from '@email-types/data/dist/mso/data/alternatives';
 
-// TODO: Add builds for esm and cjs
 // TODO: More test
 // TODO: Finish docmentation
 

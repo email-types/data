@@ -2,9 +2,19 @@
   "name": "@email-types/stylis-plugin-mso",
   "version": "0.0.0",
   "description": "A Stylis plugin that adds support for the mso- CSS vendor prefix",
-  "main": "index.js",
-  "types": "index.d.ts",
-  "scripts": {},
+  "main": "dist/cjs/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "module": "dist/esm/index.js",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "run-p build:*",
+    "build:cjs": "TARGET=cjs babel --root-mode upward -x .ts,.tsx src -d dist/cjs",
+    "build:esm": "TARGET=esm babel --root-mode upward -x .ts,.tsx src -d dist/esm",
+    "dev": "run-p \"build:* --watch\""
+  },
   "dependencies": {
     "@email-types/data": "^1.0.0-canary.0"
   },

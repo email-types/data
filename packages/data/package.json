@@ -2,8 +2,8 @@
   "name": "@email-types/data",
   "version": "1.0.0-canary.0",
   "description": "@email-types/data",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist",
     "index.d.ts",
@@ -12,7 +12,8 @@
     "mso.js"
   ],
   "scripts": {
-    "build": "tsc --build"
+    "build": "TARGET=cjs babel --root-mode upward -x .ts,.tsx src -d dist",
+    "dev": "TARGET=cjs babel --root-mode upward -x .ts,.tsx src -d dist -w"
   },
   "author": "buames",
   "repository": "https://github.com/email-types/email-types",
