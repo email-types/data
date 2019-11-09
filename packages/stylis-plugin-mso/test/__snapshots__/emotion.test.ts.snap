@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`stylis-plugin-mso returns correct styles with mso prefix 1`] = `
+.emotion-0 {
+  mso-padding-right-alt: 10px;
+  padding-right: 10px;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`stylis-plugin-mso returns correct styles with mso prefix when using string literal 1`] = `
+.emotion-0 {
+  mso-margin-left-alt: 10px;
+  margin-left: 10px;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`stylis-plugin-mso returns correct styles without mso prefix 1`] = `
+.emotion-0 {
+  padding-left: 10px;
+}
+
+<div
+  className="emotion-0"
+/>
+`;

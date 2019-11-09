@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`stylis-plugin-mso returns styles with mso prefix 1`] = `".foobar{mso-color-alt:tomato;color:tomato;}"`;

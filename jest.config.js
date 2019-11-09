@@ -22,6 +22,7 @@ module.exports = {
     '@email-types/(.+)$': '<rootDir>/packages/$1',
   },
   roots: ['<rootDir>/packages'],
+  snapshotSerializers: ['jest-emotion'],
   transform: {
     '^.+\\.ts?$': 'ts-jest',
   },
