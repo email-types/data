@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "@email-types/scripts",
-  "version": "1.0.0-canary.0",
+  "version": "1.0.0-canary.1",
   "description": "@email-types/scripts",
   "main": "index.js",
   "types": "index.d.ts",
@@ -9,7 +9,7 @@
     "build": "ts-node --files src/index.ts"
   },
   "dependencies": {
-    "@email-types/data": "1.0.0-canary.0",
+    "@email-types/data": "1.0.0-canary.1",
     "colors": "^1.4.0",
     "fs-extra": "^8.1.0",
     "mri": "^1.1.4",
