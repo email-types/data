@@ -1,4 +1,4 @@
-export type MSOProperty = {
+export type Property = {
   syntax: string;
   description?: string;
   initial: string | number | null;
@@ -7,17 +7,17 @@ export type MSOProperty = {
   features: string[];
 };
 
-export type MSOProperties = Record<string, Readonly<MSOProperty>>;
+export type Properties = Record<string, Readonly<Property>>;
 
-export interface MSOSyntax {
+export interface Syntax {
   syntax: string;
 }
 
-export type MSOSyntaxes = Record<string, Readonly<MSOSyntax>>;
+export type Syntaxes = Record<string, Readonly<Syntax>>;
 
-export interface MSOFeature {
+export interface Feature {
   title: string;
   url: string;
 }
 
-export type MSOFeatures = Record<string, Readonly<MSOFeature>>;
+export type Features = Record<string, Readonly<Feature>>;

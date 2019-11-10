@@ -1,0 +1,62 @@
+import { Provider } from '../types';
+
+export const other: Provider[] = [
+  {
+    name: 'Postbox for macOS',
+    abbr: 'Postbox.macOS',
+    description: 'A popular commercial email client for macOS.',
+    developer: 'Postbox',
+    client: 'Postbox',
+    type: 'Application',
+    platforms: ['Desktop'],
+    os: 'macOS',
+    engine: 'Gecko',
+    links: [],
+    versions: [],
+  },
+  {
+    name: 'Postbox for Windows',
+    abbr: 'Postbox.Win',
+    description: 'A popular commercial email client for Windows.',
+    developer: 'Postbox',
+    client: 'Postbox',
+    type: 'Application',
+    platforms: ['Desktop'],
+    os: 'Windows',
+    engine: 'Gecko',
+    links: [],
+    versions: [],
+  },
+  {
+    name: 'Samsung Mail',
+    abbr: 'Samsung',
+    description: "Samsung's native email app for Android devices.",
+    developer: 'Samsung',
+    client: 'Samsung Mail',
+    type: 'Application',
+    platforms: ['Mobile'],
+    os: 'Unknown',
+    engine: 'Unknown',
+    links: [
+      {
+        title: 'Litmus Blog Post',
+        url:
+          'https://litmus.com/blog/samsung-now-available-in-litmus-email-previews',
+      },
+    ],
+    versions: [],
+  },
+  {
+    name: 'Blackberry Email',
+    abbr: 'Blackberry',
+    description: "BlackBerry's default email client.",
+    developer: 'TCL',
+    client: 'Blackberry',
+    type: 'Application',
+    platforms: ['Mobile'],
+    os: 'Unknown',
+    engine: 'Unknown',
+    links: [],
+    versions: [],
+  },
+];

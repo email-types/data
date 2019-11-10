@@ -1,0 +1,43 @@
+import { Provider } from '../types';
+
+export const mozilla: Provider[] = [
+  {
+    name: 'Thunderbird for macOS',
+    abbr: 'Thunderbird.macOS',
+    description: '',
+    developer: 'Mozilla',
+    client: 'Thunderbird',
+    type: 'Application',
+    platforms: ['Desktop'],
+    os: 'macOS',
+    engine: 'Gecko',
+    links: [],
+    versions: [],
+  },
+  {
+    name: 'Thunderbird for Windows',
+    abbr: 'Thunderbird.Win',
+    description: '',
+    developer: 'Mozilla',
+    client: 'Thunderbird',
+    type: 'Application',
+    platforms: ['Desktop'],
+    os: 'Windows',
+    engine: 'Gecko',
+    links: [],
+    versions: [],
+  },
+  {
+    name: 'Thunderbird for Linux',
+    abbr: 'Thunderbird.Lin',
+    description: '',
+    developer: 'Mozilla',
+    client: 'Thunderbird',
+    type: 'Application',
+    platforms: ['Desktop'],
+    os: 'Linux',
+    engine: 'Gecko',
+    links: [],
+    versions: [],
+  },
+];

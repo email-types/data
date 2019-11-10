@@ -50,7 +50,7 @@ export const apple: Provider[] = [
     versions: [],
   },
   {
-    name: 'iCloud Mail',
+    name: 'iCloud Webmail',
     abbr: 'iCloud',
     description:
       "Apple's cloud storage and cloud computing service accessed through a web browser",

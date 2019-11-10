@@ -1,5 +1,4 @@
-import { Developer } from './data/misc/developers';
-import { Engine } from './data/misc/engines';
+import { Developer, RenderEngine } from '../misc';
 
 type GlobalsString = string & {};
 
@@ -8,22 +7,20 @@ export interface Provider {
   client: Client;
   description: string;
   developer: GlobalsString | Developer;
-  engine: Engine['name'];
+  engine: RenderEngine;
   links?: Link[];
   name: string;
   os: OperatingSystem;
   platforms: Platform[];
   protocols?: (Protocol | SecureProtocol)[];
-  type: ClientType;
+  type: Type;
   versions: string[];
 }
 
 interface Link {
-  title: 'Wikipedia' | 'MDN' | 'caniuse' | GlobalsString;
+  title: 'Homepage' | 'Wikipedia' | 'MDN' | 'caniuse' | GlobalsString;
   url: string;
 }
-
-type Platform = 'Desktop' | 'Mobile' | 'Tablet' | 'Watch';
 
 /**
  * Email Clients
@@ -34,8 +31,6 @@ type Platform = 'Desktop' | 'Mobile' | 'Tablet' | 'Watch';
  * @see https://en.wikipedia.org/wiki/Comparison_of_email_clients
  * */
 type Client = DesktopApp | MobileApp | TabletApp | WebmailService;
-
-type ClientType = 'Application' | 'Webmail';
 
 type DesktopApp =
   | 'Aol Mail'
@@ -69,7 +64,7 @@ type TabletApp =
   | 'Outlook';
 
 type WebmailService =
-  | 'Aol Webmail'
+  | 'Aol Mail'
   | 'G Suite'
   | 'Gmail'
   | 'Google Inbox'
@@ -80,6 +75,9 @@ type WebmailService =
 //
 // Client Specific Features
 // ----------------------------------------------------------------------
+type Type = 'Application' | 'Webmail';
+
+type Platform = 'Desktop' | 'Mobile' | 'Tablet' | 'Watch';
 
 /**
  * Operating Systems
@@ -92,7 +90,8 @@ type OperatingSystem =
   | 'macOS'
   | 'watchOS'
   | 'Windows'
-  | 'Universal';
+  | 'Universal'
+  | 'Unknown';
 
 /**
  * Protocols

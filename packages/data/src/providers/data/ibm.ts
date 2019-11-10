@@ -1,0 +1,43 @@
+import { Provider } from '../types';
+
+export const ibm: Provider[] = [
+  {
+    name: 'IBM Notes for macOS',
+    abbr: 'IBM.macOS',
+    description: '',
+    developer: 'Mozilla',
+    client: 'IBM Notes',
+    type: 'Application',
+    platforms: ['Desktop'],
+    os: 'macOS',
+    engine: 'WebKit',
+    links: [{ title: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/' }],
+    versions: [],
+  },
+  {
+    name: 'IBM Notes for Windows',
+    abbr: 'IBM.Win',
+    description: '',
+    developer: 'Mozilla',
+    client: 'IBM Notes',
+    type: 'Application',
+    platforms: ['Desktop'],
+    os: 'Windows',
+    engine: 'Trident',
+    links: [{ title: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/' }],
+    versions: [],
+  },
+  {
+    name: 'Thunderbird for Linux',
+    abbr: 'Thunderbird.Lin',
+    description: '',
+    developer: 'Mozilla',
+    client: 'IBM Notes',
+    type: 'Application',
+    platforms: ['Desktop'],
+    os: 'Linux',
+    engine: 'Gecko',
+    links: [{ title: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/' }],
+    versions: [],
+  },
+];

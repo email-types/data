@@ -7,7 +7,7 @@ export const aol: Provider[] = [
     description:
       "AOL's webmail service, which can be accessed through a web browser.",
     developer: 'Verizon',
-    client: 'Aol Webmail',
+    client: 'Aol Mail',
     type: 'Webmail',
     platforms: ['Desktop', 'Mobile', 'Tablet'],
     os: 'Universal',

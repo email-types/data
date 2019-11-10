@@ -1,31 +1,4 @@
-import { Developer } from './developers';
-
-/**
- * Layout Engines
- *
- * @see https://en.m.wikipedia.org/wiki/Comparison_of_browser_engines
- * */
-export type LayoutEngine =
-  | 'Blink'
-  | 'Gecko'
-  | 'MsWord'
-  | 'Presto'
-  | 'Trident'
-  | 'WebKit';
-
-/**
- * CSS (Vendor) Prefixes
- *
- * @see https://en.m.wikipedia.org/wiki/Comparison_of_browser_engines_(CSS_support)#Vendor-specific
- * */
-export type CSSPrefix = 'Moz' | 'Ms' | 'Mso' | 'O' | 'WebKit';
-
-export interface Engine {
-  name: LayoutEngine | 'Contextual' | 'Unknown';
-  prefix: CSSPrefix | 'Contextual' | 'Unknown';
-  description?: string;
-  developer?: Developer | 'Opera' | 'Unknown';
-}
+import { Engine } from '../types';
 
 export const engines: Engine[] = [
   {
