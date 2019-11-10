@@ -7,12 +7,11 @@ export const aol: Provider[] = [
     description:
       "AOL's webmail service, which can be accessed through a web browser.",
     developer: 'Verizon',
-    client: 'Aol Mail',
+    client: 'Aol Webmail',
     type: 'Webmail',
     platforms: ['Desktop', 'Mobile', 'Tablet'],
     os: 'Universal',
-    engine: 'Contextual',
-    prefix: 'Contextual',
+    engine: 'Blink',
     links: [
       { title: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/AOL_Mail' },
     ],
@@ -28,7 +27,6 @@ export const aol: Provider[] = [
     platforms: ['Desktop'],
     os: 'Windows',
     engine: 'Trident',
-    prefix: 'Ms',
     links: [
       { title: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/AOL_Mail' },
     ],
@@ -44,7 +42,6 @@ export const aol: Provider[] = [
     platforms: ['Desktop'],
     os: 'macOS',
     engine: 'WebKit',
-    prefix: 'WebKit',
     links: [
       { title: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/AOL_Mail' },
     ],
@@ -59,8 +56,7 @@ export const aol: Provider[] = [
     type: 'Application',
     platforms: ['Mobile', 'Tablet'],
     os: 'Android',
-    engine: 'Gecko',
-    prefix: 'WebKit',
+    engine: 'Blink',
     links: [
       { title: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/AOL_Mail' },
     ],
@@ -76,7 +72,6 @@ export const aol: Provider[] = [
     platforms: ['Mobile', 'Tablet'],
     os: 'iOS',
     engine: 'WebKit',
-    prefix: 'WebKit',
     links: [
       { title: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/AOL_Mail' },
     ],
@@ -92,7 +87,6 @@ export const aol: Provider[] = [
     platforms: ['Tablet'],
     os: 'iPadOS',
     engine: 'WebKit',
-    prefix: 'WebKit',
     links: [
       { title: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/AOL_Mail' },
     ],
@@ -108,7 +102,6 @@ export const aol: Provider[] = [
     platforms: ['Watch'],
     os: 'watchOS',
     engine: 'WebKit',
-    prefix: 'WebKit',
     links: [
       { title: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/AOL_Mail' },
     ],

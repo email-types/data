@@ -1,42 +1,29 @@
+import { Developer } from './data/misc/developers';
+import { Engine } from './data/misc/engines';
+
 type GlobalsString = string & {};
 
 export interface Provider {
   abbr: string;
   client: Client;
   description: string;
-  developer: Developer;
-  engine: RenderingEngine;
+  developer: GlobalsString | Developer;
+  engine: Engine['name'];
   links?: Link[];
   name: string;
   os: OperatingSystem;
   platforms: Platform[];
-  prefix: VendorPrefix;
   protocols?: (Protocol | SecureProtocol)[];
   type: ClientType;
   versions: string[];
 }
 
-export interface Link {
+interface Link {
   title: 'Wikipedia' | 'MDN' | 'caniuse' | GlobalsString;
   url: string;
 }
 
-export type Platform = 'Desktop' | 'Mobile' | 'Tablet' | 'Watch';
-
-/**
- * Developers
- *
- * @see https://en.wikipedia.org/wiki/Comparison_of_webmail_providers
- */
-export type Developer =
-  | 'Apple'
-  | 'Google'
-  | 'IBM'
-  | 'Microsoft'
-  | 'Mozilla'
-  | 'Verizon'
-  | 'Other'
-  | GlobalsString;
+type Platform = 'Desktop' | 'Mobile' | 'Tablet' | 'Watch';
 
 /**
  * Email Clients
@@ -45,12 +32,12 @@ export type Developer =
  * and `Webmail Services`, across all platforms
  *
  * @see https://en.wikipedia.org/wiki/Comparison_of_email_clients
- */
-export type Client = DesktopApp | MobileApp | TabletApp | WebmailService;
+ * */
+type Client = DesktopApp | MobileApp | TabletApp | WebmailService;
 
-export type ClientType = 'Application' | 'Webmail';
+type ClientType = 'Application' | 'Webmail';
 
-export type DesktopApp =
+type DesktopApp =
   | 'Aol Mail'
   | 'Apple Mail'
   | 'IBM Notes'
@@ -61,7 +48,7 @@ export type DesktopApp =
   | 'Windows 10 Mail'
   | 'Windows Live Mail';
 
-export type MobileApp =
+type MobileApp =
   | 'Android Mail'
   | 'Aol Mail'
   | 'Apple Mail'
@@ -74,15 +61,15 @@ export type MobileApp =
   | 'Windows Phone 8 Mail'
   | 'Yahoo Mail';
 
-export type TabletApp =
+type TabletApp =
   | 'Apple Mail'
   | 'Gmail'
   | 'Gmail IMAP'
   | 'Google Inbox'
   | 'Outlook';
 
-export type WebmailService =
-  | 'Aol Mail'
+type WebmailService =
+  | 'Aol Webmail'
   | 'G Suite'
   | 'Gmail'
   | 'Google Inbox'
@@ -95,44 +82,9 @@ export type WebmailService =
 // ----------------------------------------------------------------------
 
 /**
- * CSS Vendor Prefixes
- *
- * @see https://en.m.wikipedia.org/wiki/Comparison_of_browser_engines_(CSS_support)#Vendor-specific
- */
-export type VendorPrefix =
-  | 'Ms'
-  | 'Moz'
-  | 'WebKit'
-  | 'Mso'
-  | 'Contextual'
-  | 'Unknown';
-
-/**
- * Rendering Engines
- *
- * - `Blink`: Developed by Google. Used in Google Chrome web browsers and part of the Chromium project.
- * - `Trident`: Developed by Microsoft. Used for Microsoft Windows version of Internet Explorer.
- * - `Gecko`: Developed by Mozilla. Used in the Firefox browser and the Thunderbird email client.
- * - `WebKit`: Developed by Apple. Used in the Safari web browser and all of the iOS web browsers.
- * - `Presto`: Developed by Opera. Depricated engine used in the Opera 7 thru Opera 14 web browers.
- * - `MsWord`: yes, Microsoft Word.
- * - `Contextual`: To be used when the platform is any variation of Webmail.
- * - `Unknown`: Zero idea.
- *
- * @see https://en.m.wikipedia.org/wiki/Comparison_of_browser_engines
- */
-export type RenderingEngine =
-  | 'Blink'
-  | 'Trident'
-  | 'Gecko'
-  | 'WebKit'
-  | 'Presto'
-  | 'MsWord'
-  | 'Contextual'
-  | 'Unknown';
-
-/**  Operating Systems */
-export type OperatingSystem =
+ * Operating Systems
+ * */
+type OperatingSystem =
   | 'Android'
   | 'iOS'
   | 'iPadOS'
@@ -140,15 +92,14 @@ export type OperatingSystem =
   | 'macOS'
   | 'watchOS'
   | 'Windows'
-  | 'Universal'
-  | 'Unknown';
+  | 'Universal';
 
 /**
  * Protocols
  *
  * @see https://en.m.wikipedia.org/wiki/Comparison_of_email_clients#Communication_and_access_protocol_support
- */
-export type Protocol =
+ * */
+type Protocol =
   | 'POP3'
   | 'IMAP4'
   | 'SMPT'
@@ -158,11 +109,17 @@ export type Protocol =
   | 'IPv6'
   | 'MAPI';
 
-export type SecureProtocol = 'SSL' | 'TLS';
+type SecureProtocol =
+  | 'SSL'
+  | 'TLS'
+  | 'TLSv1.3'
+  | 'TLSv1.2'
+  | 'TLSv1.1'
+  | 'TLSv1';
 
-/**
- * Filename Extensions
- *
- * @see https://en.m.wikipedia.org/wiki/Email#Filename_extensions
- */
-export type Extensions = 'eml' | 'emlx' | 'msg' | 'mbx';
+// /**
+//  * Filename Extensions
+//  *
+//  * @see https://en.m.wikipedia.org/wiki/Email#Filename_extensions
+//  * */
+// type Extensions = 'eml' | 'emlx' | 'msg' | 'mbx';
