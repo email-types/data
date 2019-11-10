@@ -1,3 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`stylis-plugin-mso returns styles with mso prefix 1`] = `".foobar{mso-color-alt:tomato;color:tomato;}"`;
+exports[`stylis-plugin-mso returns with a fixed mso prefix 1`] = `"{mso-color-alt:tomato;}"`;
+
+exports[`stylis-plugin-mso returns with mso prefix 1`] = `"{mso-color-alt:tomato;color:tomato;}"`;
+
+exports[`stylis-plugin-mso returns without mso prefix 1`] = `"{color:tomato;}"`;

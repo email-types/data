@@ -1,52 +1,87 @@
 import renderer from 'react-test-renderer';
-import createCache from '@emotion/cache';
+import createCache, { EmotionCache } from '@emotion/cache';
 import { CacheProvider, jsx, css, SerializedStyles } from '@emotion/core';
 import { matchers } from 'jest-emotion';
-import { createPlugin } from '../src';
+import plugin, { createPlugin, Plugin } from '../src';
 
 expect.extend(matchers);
 
-const render = (
-  styles: SerializedStyles,
-  prefix = true,
-): renderer.ReactTestRendererJSON | null => {
-  const cache = createCache({
-    stylisPlugins: [createPlugin({ prefix })],
-    prefix,
-  });
-
-  const child = jsx('div', { css: styles });
-  const comp = jsx(CacheProvider, { value: cache }, child);
-
-  return renderer.create(comp).toJSON();
-};
+const specs: Array<{
+  name: string;
+  sample: SerializedStyles;
+  expected: Record<string, string>;
+  prefix?: boolean;
+}> = [
+  {
+    name: 'returns with mso prefix',
+    sample: css({ color: 'tomato' }),
+    expected: {
+      color: 'tomato',
+      'mso-color-alt': 'tomato',
+    },
+    prefix: true,
+  },
+  {
+    name: 'returns without mso prefix',
+    sample: css({ color: 'tomato' }),
+    expected: { color: 'tomato' },
+    prefix: false,
+  },
+  {
+    name: 'returns with mso prefix when using string literal',
+    sample: css`
+      color: tomato;
+    `,
+    expected: { color: 'tomato', 'mso-color-alt': 'tomato' },
+  },
+  {
+    name: 'returns with a fixed mso prefix',
+    sample: css({ '-mso-color-alt': 'tomato' }),
+    expected: { 'mso-color-alt': 'tomato' },
+  },
+  {
+    name: 'returns with a fixed mso prefix when using an object',
+    sample: css({ msoColorAlt: 'tomato' }),
+    expected: { 'mso-color-alt': 'tomato' },
+  },
+  {
+    name: 'returns with a fixed mso prefix when using string literal',
+    sample: css`
+      -mso-color-alt: tomato;
+    `,
+    expected: { 'mso-color-alt': 'tomato' },
+  },
+];
 
 describe('stylis-plugin-mso', () => {
-  it('returns correct styles with mso prefix', () => {
-    const tree = render(css({ paddingRight: 10 }));
+  specs.forEach((spec) => {
+    it(spec.name, () => {
+      let cache: EmotionCache;
+      let _plugin: Plugin = plugin;
 
-    expect(tree).toHaveStyleRule('padding-right', '10px');
-    expect(tree).toHaveStyleRule('mso-padding-right-alt', '10px');
-    expect(tree).toMatchSnapshot();
-  });
+      if (typeof spec.prefix === 'boolean') {
+        _plugin = spec.prefix
+          ? createPlugin()
+          : createPlugin({ prefix: spec.prefix });
 
-  it('returns correct styles without mso prefix', () => {
-    const tree = render(css({ paddingLeft: 10 }), false);
+        cache = createCache({
+          stylisPlugins: [_plugin],
+          prefix: spec.prefix,
+        });
+      } else {
+        cache = createCache({
+          stylisPlugins: [_plugin],
+        });
+      }
 
-    expect(tree).toHaveStyleRule('padding-left', '10px');
-    expect(tree).not.toHaveStyleRule('mso-padding-left-alt', '10px');
-    expect(tree).toMatchSnapshot();
-  });
+      const child = jsx('div', { css: spec.sample });
+      const parent = jsx(CacheProvider, { value: cache }, child);
+      const tree = renderer.create(parent).toJSON();
 
-  it('returns correct styles with mso prefix when using string literal', () => {
-    const tree = render(
-      css`
-        margin-left: 10px;
-      `,
-    );
-
-    expect(tree).toHaveStyleRule('margin-left', '10px');
-    expect(tree).toHaveStyleRule('mso-margin-left-alt', '10px');
-    expect(tree).toMatchSnapshot();
+      expect(tree).toMatchSnapshot();
+      Object.entries(spec.expected).forEach(([key, value]) => {
+        expect(tree).toHaveStyleRule(key, value);
+      });
+    });
   });
 });

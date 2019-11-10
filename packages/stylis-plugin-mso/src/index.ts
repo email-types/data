@@ -1,43 +1,38 @@
 import { alternatives } from '@email-types/data/mso';
 
-// TODO: More test
-// TODO: Finish docmentation
-
-type Plugin = (context: number, content: string) => string | void;
-
-const msoPattern = /^-mso-/;
-const msoAltPattern = /mso-|-alt+(?![^(]+\))/g;
-const cssPropertyPattern = /:+(?![^(]+\))/g;
+export type Plugin = (context: number, content: string) => string | void;
 
 const properties = Object.keys(alternatives).reduce<Record<string, string>>(
   (result, property) => {
-    const [, name] = property.split(msoAltPattern);
+    // split the mso alt property to get the matched css style
+    // eg. `mso-line-height-alt` becomes `line-height`.
+    const [, name] = property.split(/mso-|-alt/);
     result[name] = property;
     return result;
   },
   {},
 );
 
-export const createPlugin = (options: { prefix?: boolean } = {}): Plugin => {
+export const createPlugin = (
+  options: { prefix: boolean } = { prefix: true },
+): Plugin => {
   const plugin: Plugin = (context, content) => {
     // only run on a property declaration
     if (context === 1) {
       if (typeof options.prefix === 'boolean' && options.prefix !== false) {
-        const values = content.trim().split(cssPropertyPattern);
-        const [key, value] = values;
-        const prefixKey = properties[key];
-        if (prefixKey) {
-          return `${prefixKey}:${value};${content}`;
+        const [key, value] = content.trim().split(':');
+        const property = properties[key];
+        if (property) {
+          return `${property}:${value};${content}`;
         }
       }
 
       // always fix the prefix
-      return content.replace(msoPattern, 'mso-');
+      return content.replace(/^-mso-/, 'mso-');
     }
   };
 
   return plugin;
 };
 
-export const plugin = createPlugin({ prefix: true });
-export default plugin;
+export default createPlugin({ prefix: true });
