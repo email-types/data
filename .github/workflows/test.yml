@@ -20,7 +20,8 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - name: Install dependencies and build all files
-        uses: ./.github/actions/setup
+        run: yarn install --ignore-engines --frozen-lockfile
+        run: yarn run build
       - name: Run eslint
         run: yarn run lint --quiet
       - name: Run test
