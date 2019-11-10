@@ -10,6 +10,7 @@ jobs:
         uses: actions/setup-node@v1
       - name: Install dependencies and build all files
         run: yarn install --ignore-engines --frozen-lockfile
+      - name: Build all files
         run: yarn run build
       - name: Validate conventional title
         uses: beemojs/conventional-pr-action@v1
