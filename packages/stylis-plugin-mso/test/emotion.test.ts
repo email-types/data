@@ -36,7 +36,7 @@ const specs: Array<{
   },
   {
     name: 'returns with a fixed mso prefix',
-    sample: css({ '-mso-color-alt': 'tomato' }),
+    sample: css({ MsoColorAlt: 'tomato' }),
     expected: { 'mso-color-alt': 'tomato' },
   },
   {
