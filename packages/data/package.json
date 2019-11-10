@@ -9,7 +9,9 @@
     "index.d.ts",
     "index.js",
     "mso.d.ts",
-    "mso.js"
+    "mso.js",
+    "providers.d.ts",
+    "providers.js"
   ],
   "scripts": {
     "build": "TARGET=cjs babel --root-mode upward -x .ts,.tsx src -d dist",
