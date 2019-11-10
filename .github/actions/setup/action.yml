@@ -1,8 +1,0 @@
-name: Setup
-description: Installing dependencies and build all files
-branding:
-  icon: mail
-  color: gray-dark
-runs:
-  using: node12
-  main: ./index.js

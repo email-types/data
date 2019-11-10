@@ -6,7 +6,6 @@
   ],
   "scripts": {
     "postinstall": "lerna bootstrap",
-    "prepare": "yarn build",
     "clean": "lerna exec -- rm -rf ./{dist,*.tsbuildinfo}",
     "clean:prune": "yarn clean && lerna exec -- rm -rf ./node_modules  && rm -rf ./{node_modules,coverage,*.lock,*.log}",
     "build": "yarn clean && lerna run build --ignore=@email-types/scripts && yarn types",
