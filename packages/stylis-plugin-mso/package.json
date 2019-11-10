@@ -27,6 +27,9 @@
     "react-test-renderer": "^16.11.0",
     "stylis": "^3.5.4"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "buames",
   "repository": "https://github.com/email-types/email-types",
   "license": "MIT"

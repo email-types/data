@@ -15,6 +15,9 @@
     "build": "TARGET=cjs babel --root-mode upward -x .ts,.tsx src -d dist",
     "dev": "TARGET=cjs babel --root-mode upward -x .ts,.tsx src -d dist -w"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "buames",
   "repository": "https://github.com/email-types/email-types",
   "license": "MIT"

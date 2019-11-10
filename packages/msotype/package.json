@@ -13,6 +13,9 @@
     "csstype": "^2.6.7",
     "typescript": "^3.6.4"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "buames",
   "repository": "https://github.com/email-types/email-types",
   "license": "MIT"
