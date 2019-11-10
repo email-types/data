@@ -1,5 +1,5 @@
 module.exports = {
-  collectCoverageFrom: ['**/src/**/*.ts', '**/test/**/*.ts'],
+  collectCoverageFrom: ['**/src/**/*.ts'],
   coverageDirectory: 'coverage',
   coveragePathIgnorePatterns: [
     '/node_modules/',
@@ -23,7 +23,4 @@ module.exports = {
   },
   roots: ['<rootDir>/packages'],
   snapshotSerializers: ['jest-emotion'],
-  transform: {
-    '^.+\\.ts?$': 'ts-jest',
-  },
 };

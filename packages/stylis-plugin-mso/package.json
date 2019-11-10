@@ -1,5 +1,5 @@
 {
-  "name": "@email-types/stylis-plugin-mso",
+  "name": "stylis-plugin-mso",
   "version": "0.0.0",
   "description": "A Stylis plugin that adds support for the mso- CSS vendor prefix",
   "main": "dist/cjs/index.js",
