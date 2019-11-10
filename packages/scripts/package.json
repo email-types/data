@@ -21,6 +21,6 @@
     "ts-node": "^8.4.1"
   },
   "author": "buames",
-  "repository": "https://github.com/email-types/email-types",
+  "repository": "https://github.com/email-types/email-types/tree/master/packages/scripts",
   "license": "MIT"
 }

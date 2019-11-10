@@ -1,0 +1,44 @@
+{
+  "name": "stylis-plugin-mso",
+  "version": "0.0.0",
+  "description": "A Stylis plugin that adds support for the mso- CSS vendor prefix",
+  "main": "dist/cjs/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "module": "dist/esm/index.js",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "run-p build:*",
+    "build:cjs": "TARGET=cjs babel --root-mode upward -x .ts,.tsx src -d dist/cjs",
+    "build:esm": "TARGET=esm babel --root-mode upward -x .ts,.tsx src -d dist/esm",
+    "dev": "run-p \"build:* --watch\""
+  },
+  "dependencies": {
+    "@email-types/data": "^1.0.0-canary.0"
+  },
+  "devDependencies": {
+    "@emotion/cache": "^10.0.19",
+    "@emotion/core": "^10.0.22",
+    "@types/react": "^16.9.11",
+    "@types/react-test-renderer": "^16.9.1",
+    "react": "^16.11.0",
+    "react-test-renderer": "^16.11.0",
+    "stylis": "^3.5.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "css-in-js",
+    "email",
+    "stylis",
+    "mso",
+    "outlook",
+    "css"
+  ],
+  "author": "buames",
+  "repository": "https://github.com/email-types/email-types/tree/master/packages/stylis-plugin-mso",
+  "license": "MIT"
+}

@@ -13,7 +13,17 @@
     "csstype": "^2.6.7",
     "typescript": "^3.6.4"
   },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "definitions",
+    "email",
+    "mso",
+    "typescript",
+    "types"
+  ],
   "author": "buames",
-  "repository": "https://github.com/email-types/email-types",
+  "repository": "https://github.com/email-types/email-types/tree/master/packages/msotype",
   "license": "MIT"
 }

@@ -2,7 +2,8 @@
 
 # Email Types
 
-TypeScript definitions and compatibility data that makes building emails easier.
+TypeScript definitions, compatibility data , and utils that makes building
+emails easier.
 
 _This is very much a work in progress_
 

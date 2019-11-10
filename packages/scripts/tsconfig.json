@@ -2,6 +2,7 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "noEmit": true,
+    "module": "commonjs",
     "tsBuildInfoFile": "tsconfig.tsbuildinfo"
   },
   "exclude": ["dist", "test"],

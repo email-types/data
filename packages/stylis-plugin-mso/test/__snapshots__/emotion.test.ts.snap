@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`stylis-plugin-mso returns with a fixed mso prefix 1`] = `
+.emotion-0 {
+  mso-color-alt: tomato;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`stylis-plugin-mso returns with a fixed mso prefix when using an object 1`] = `
+.emotion-0 {
+  mso-color-alt: tomato;
+}
+
+.emotion-0 {
+  mso-color-alt: tomato;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`stylis-plugin-mso returns with a fixed mso prefix when using string literal 1`] = `
+.emotion-0 {
+  mso-color-alt: tomato;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`stylis-plugin-mso returns with mso prefix 1`] = `
+.emotion-0 {
+  mso-color-alt: tomato;
+  color: tomato;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`stylis-plugin-mso returns with mso prefix when using string literal 1`] = `
+.emotion-0 {
+  mso-color-alt: tomato;
+  color: tomato;
+}
+
+<div
+  className="emotion-0"
+/>
+`;
+
+exports[`stylis-plugin-mso returns without mso prefix 1`] = `
+.emotion-0 {
+  mso-color-alt: tomato;
+  color: tomato;
+}
+
+.emotion-0 {
+  color: tomato;
+}
+
+<div
+  className="emotion-0"
+/>
+`;

@@ -1,5 +1,5 @@
 module.exports = {
-  collectCoverageFrom: ['**/src/**/*.ts', '**/test/**/*.ts'],
+  collectCoverageFrom: ['**/src/**/*.ts'],
   coverageDirectory: 'coverage',
   coveragePathIgnorePatterns: [
     '/node_modules/',
@@ -22,7 +22,5 @@ module.exports = {
     '@email-types/(.+)$': '<rootDir>/packages/$1',
   },
   roots: ['<rootDir>/packages'],
-  transform: {
-    '^.+\\.ts?$': 'ts-jest',
-  },
+  snapshotSerializers: ['jest-emotion'],
 };
