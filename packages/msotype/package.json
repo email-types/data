@@ -16,7 +16,14 @@
   "publishConfig": {
     "access": "public"
   },
+  "keywords": [
+    "definitions",
+    "email",
+    "mso",
+    "typescript",
+    "types"
+  ],
   "author": "buames",
-  "repository": "https://github.com/email-types/email-types",
+  "repository": "https://github.com/email-types/email-types/tree/master/packages/msotype",
   "license": "MIT"
 }

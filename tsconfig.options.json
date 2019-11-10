@@ -6,6 +6,7 @@
     "declarationMap": false,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "jsx": "preserve",
     "module": "esnext",
     "moduleResolution": "node",
     "noEmitOnError": true,

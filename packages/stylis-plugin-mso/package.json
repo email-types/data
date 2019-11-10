@@ -30,7 +30,15 @@
   "publishConfig": {
     "access": "public"
   },
+  "keywords": [
+    "css-in-js",
+    "email",
+    "stylis",
+    "mso",
+    "outlook",
+    "css"
+  ],
   "author": "buames",
-  "repository": "https://github.com/email-types/email-types",
+  "repository": "https://github.com/email-types/email-types/tree/master/packages/stylis-plugin-mso",
   "license": "MIT"
 }

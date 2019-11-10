@@ -39,7 +39,7 @@ using libraries that accepts any numeric value as length which is common in
 CSS-in-JS libraries like [EmotionJS](https://github.com/emotion-js/emotion).
 
 |                 | Default                 | Hyphen                        |
-| --------------- | ----------------------- | ----------------------------- |
+| :-------------- | :---------------------- | :---------------------------- |
 | **All**         | `Properties`            | `PropertiesHyphen`            |
 | **Alternative** | `AlternativeProperties` | `AlternativePropertiesHyphen` |
 | **Standard**    | `StandardProperties`    | `StandardPropertiesHyphen`    |
@@ -55,11 +55,10 @@ Categories:
 
 ### Font Types
 
-Interfaces with descriptors for different MSO font types. These properties do
-not accept the generic length arugment since it's not needed.
+Interfaces with descriptors for different MSO font types.
 
 |               | Default             | Hyphen                    |
-| ------------- | ------------------- | ------------------------- |
+| :------------ | :------------------ | :------------------------ |
 | **All**       | `FontProperties`    | `FontPropertiesHyphen`    |
 | **`Ansi`**    | `AnsiProperties`    | `AnsiPropertiesHyphen`    |
 | **`Ascii`**   | `AsciiProperties`   | `AsciiropertiesHyphen`    |
@@ -76,9 +75,7 @@ Categories:
 - **`Fareast`** - Fareast specific font properties
 - **`Panose`** - Panose specific font properties
 
-## Usage
-
-### Default Variation
+## Using Default Variation
 
 JavaScript cased (camel) properties are provided in `Mso.Properties` and
 `Mso.FontProperties`.
@@ -92,7 +89,7 @@ const styles: Mso.Properties = {
 };
 ```
 
-### Hyphen Variation
+## Using Hyphen Variation
 
 Hyphen cased (kebab) properties are provided in `Mso.PropertiesHyphen`. These
 not **not** included by default in `Mso.Properties`. To allow both of them, you
@@ -123,7 +120,7 @@ const style: Style = {
 };
 ```
 
-### Overriding `<length>`
+## Overriding `<length>`
 
 Length defaults to `string | 0`. But it's possible to override it using
 generics.
@@ -137,7 +134,7 @@ const style: Mso.Properties<string | number> = {
 };
 ```
 
-### Type Check All CSS Properties
+## Type Check All CSS Properties
 
 By default, **only** `mso-` CSS vendor prefixes are provided. If you want to
 type check all CSS properties, you can use `msotype` together with [csstype]. To

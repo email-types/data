@@ -18,7 +18,12 @@
   "publishConfig": {
     "access": "public"
   },
+  "keywords": [
+    "data",
+    "emails",
+    "css"
+  ],
   "author": "buames",
-  "repository": "https://github.com/email-types/email-types",
+  "repository": "https://github.com/email-types/email-types/tree/master/packages/data",
   "license": "MIT"
 }

@@ -3,66 +3,50 @@
 [msotype]:
   https://github.com/email-types/email-types/tree/master/packages/msotype
 
-# Stylis Plugin MSO (Prefix)
+# MSO Stylis Plugin
 
-A [Stylis][stylis] plugin that adds support for the `mso-*` CSS vendor prefix.
+A [Stylis][stylis] plugin that adds support for the `mso-` CSS vendor prefix. It
+automatically adds the `mso-` prefix and `-alt` postfix for all Microsoft Office
+alternative CSS properties (see [msotype][msotype]). It also prevents a leading
+`-` from being added. So you'll get `mso-` instead of `-mso-`.
 
-- Prevents a leading `-` from being added. So you'll get `mso-*` instead of
-  `-mso-*`.
-- Automatically adds the `mso-*` prefix and the `*-alt` postfix for all
-  Microsoft Office alternative CSS properties. See [msotype][msotype].
-- Works with CSS-in-JS libraries like [EmotionJs][emotion].
-
-## Install
+Install with yarn
 
 ```sh
-yarn add @email-types/stylis-plugin-mso
+yarn add stylis-plugin-mso
 ```
 
-## Usage
+Or install with npm:
 
-### Stylis Usage
+```sh
+npm install stylis-plugin-mso
+```
+
+## Using with Stylis
 
 ```ts
 import stylis from 'stylis';
-import { plugin } from '@email-types/stylis-plugin-mso';
+import plugin from 'stylis-plugin-mso';
 
-stylie.use(plugin);
+stylis.use(plugin);
 
 stylis('.foobar', `{ color: tomato; }`);
 // => .foobar { mso-color-alt:tomato; color:tomato; }
 ```
 
-### Automatic Vendor Prefixes
+## Using with EmotionJs
 
-By default, the `mso-` prefix and the `-alt` postfix is automatically applied to
-any Microsoft Office alternative CSS property used. You can disable able this by
-setting the `prefix` option to `false` when creating an instance of the plugin.
-
-```ts
-import stylis from 'stylis';
-import { createPlugin } from '@email-types/stylis-plugin-mso';
-
-const plugin = createPlugin({ prefix: false });
-stylie.use(plugin);
-
-stylis('.foobar', `{ color: tomato; }`);
-// => .foobar { color:tomato; }
-```
-
-### Using with EmotionJs
-
-You use with [EmotionJs'][emotion], you'll need to add the `<CacheProvider />`
-to the top of your app. Note that when multiple `<CacheProvider />`'s are used,
-all of your styles will be parsed twice. See more at
+To use with [EmotionJs][emotion], you'll need to add a `<CacheProvider />`. Note
+that when multiple `<CacheProvider />` are used, all of your styles will be
+parsed twice. So make sure to add this at the top of your app. See more at
 [@emotion/cache](https://github.com/emotion-js/emotion/tree/master/packages/cache).
 
 ```tsx
-import msoPrefixPlugin from '@email-types/stylis-plugin-mso';
 import { CacheProvider } from '@emotion/core';
+import plugin from 'stylis-plugin-mso';
 
 const cache = createCache({
-  stylisPlugins: [msoPrefixPlugin],
+  stylisPlugins: [plugin],
 });
 
 const App = () => (
@@ -72,6 +56,33 @@ const App = () => (
 );
 ```
 
+## Automatic Vendor Prefix
+
+By default, the `mso-` prefix and `-alt` postfix are automatically applied to
+all Microsoft Office alternative CSS properties. You can disable this by
+creating an instance of the plugin and setting the `prefix` option to `false`.
+
+```ts
+import stylis from 'stylis';
+import { createPlugin } from 'stylis-plugin-mso';
+
+const plugin = createPlugin({ prefix: false });
+
+stylis.set({ prefix: false });
+stylis.use(plugin);
+
+stylis('.foobar', `{ color: tomato; }`);
+// => .foobar { color:tomato; }
+```
+
 ## API
 
-... todo
+### createPlugin
+
+```tsx
+createPlugin(options?: object): StylisPlugin
+```
+
+**options**
+
+- `prefix?: boolean`: Toggles automatic `mso` vendor prefixing. Default: `true`.
