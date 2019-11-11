@@ -1,9 +1,10 @@
 /* eslint-disable import/no-mutable-exports */
 import { properties as rawProperties } from '@email-types/data/mso';
-import { toPascalCase } from '../utils';
-import { parse, AnyDataType } from './parser';
 import { createComment } from './comment';
 import { Category, DataType } from './constants';
+import { parse, AnyDataType } from './parser';
+import { msPatches } from './patches/ms';
+import { toPascalCase } from '../utils';
 
 export interface Property {
   key: string;
@@ -16,10 +17,13 @@ export interface Property {
 }
 
 export let getProperties = (): Property[] => {
-  const entries = Object.entries(rawProperties).sort();
+  const entries = Object.entries({
+    ...rawProperties,
+    ...msPatches,
+  }).sort();
+
   const properties = entries.map(([key, value]) => {
     const types = parse(value.syntax);
-
     const property: Property = {
       key,
       types,

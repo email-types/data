@@ -367,6 +367,14 @@ export interface AlternativeProperties<TLength = GlobalsString | 0> {
 
 export interface StandardProperties<TLength = GlobalsString | 0> {
   /**
+   * Sets or retrieves the interpolation (resampling) method used to stretch an `<img /> element
+   *
+   * | Inherited | &vert; | Initial |
+   * | --------- | -- | ------------- |
+   * `false` | &vert; |`n/a` |
+   */
+  msInterpolationMode?: MsInterpolationModeProperty;
+  /**
    * | Inherited | &vert; | Initial |
    * | --------- | -- | ------------- |
    * `false` | &vert; |`n/a` |
@@ -3351,6 +3359,14 @@ export interface AlternativePropertiesHyphen<TLength = GlobalsString | 0> {
 
 export interface StandardPropertiesHyphen<TLength = GlobalsString | 0> {
   /**
+   * Sets or retrieves the interpolation (resampling) method used to stretch an `<img /> element
+   *
+   * | Inherited | &vert; | Initial |
+   * | --------- | -- | ------------- |
+   * `false` | &vert; |`n/a` |
+   */
+  'ms-interpolation-mode'?: MsInterpolationModeProperty;
+  /**
    * | Inherited | &vert; | Initial |
    * | --------- | -- | ------------- |
    * `false` | &vert; |`n/a` |
@@ -5969,6 +5985,8 @@ export interface FontPropertiesHyphen<TLength = GlobalsString | 0>
 type GlobalsString = string & {};
 
 type GlobalsNumber = number & {};
+
+export type MsInterpolationModeProperty = 'bicubic' | 'nearest-neighbor';
 
 export type MsoAnsiFontSizeProperty<TLength = GlobalsString | 0> = FontSize | TLength | GlobalsString;
 
