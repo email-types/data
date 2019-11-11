@@ -1,4 +1,4 @@
-import { Properties } from '../types';
+import { Properties } from '../types/mso';
 
 export const fonts: Properties = {
   'mso-ansi-font-size': {

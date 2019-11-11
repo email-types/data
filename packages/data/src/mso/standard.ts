@@ -1,4 +1,4 @@
-import { Properties } from '../types';
+import { Properties } from '../types/mso';
 
 export const standard: Properties = {
   'mso-background': {

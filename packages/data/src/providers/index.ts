@@ -1,23 +1,22 @@
-import { apple } from './data/apple';
-import { aol } from './data/aol';
-import { google } from './data/google';
-import { ibm } from './data/ibm';
-import { microsoft } from './data/microsoft';
-import { mozilla } from './data/mozilla';
-import { yahoo } from './data/yahoo';
-import { other } from './data/other';
-
-export * from './types';
+import { apple } from './apple';
+import { aol } from './aol';
+import { google } from './google';
+import { ibm } from './ibm';
+import { microsoft } from './microsoft';
+import { mozilla } from './mozilla';
+import { yahoo } from './yahoo';
+import { other } from './other';
+import { Provider } from '../types';
 
 export { apple, aol, google, ibm, microsoft, mozilla, yahoo, other };
 
-export const providers = [
-  apple,
-  aol,
-  google,
-  ibm,
-  microsoft,
-  mozilla,
-  yahoo,
-  other,
-].flat();
+export const providers: Provider[] = [
+  ...apple,
+  ...aol,
+  ...google,
+  ...ibm,
+  ...microsoft,
+  ...mozilla,
+  ...yahoo,
+  ...other,
+];

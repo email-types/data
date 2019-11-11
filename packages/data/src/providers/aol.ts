@@ -69,7 +69,7 @@ export const aol: Provider[] = [
     developer: 'Verizon',
     client: 'Aol Mail',
     type: 'Application',
-    platforms: ['Mobile', 'Tablet'],
+    platforms: ['Mobile'],
     os: 'iOS',
     engine: 'WebKit',
     links: [

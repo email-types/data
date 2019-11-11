@@ -1,4 +1,4 @@
-import { Syntaxes } from '../types';
+import { Syntaxes } from '../types/mso';
 
 export const syntaxes: Syntaxes = {
   'border-art': {

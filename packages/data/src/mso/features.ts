@@ -1,4 +1,4 @@
-import { Features } from '../types';
+import { Features } from '../types/mso';
 
 export const features: Features = {
   animations: {

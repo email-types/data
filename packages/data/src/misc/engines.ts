@@ -22,13 +22,6 @@ export const engines: Engine[] = [
     prefix: 'Mso',
   },
   {
-    name: 'Presto',
-    description:
-      'Depricated engine used in the Opera 7 thru Opera 14 web browers.',
-    developer: 'Opera',
-    prefix: 'O',
-  },
-  {
     name: 'Trident',
     description: 'Used for Microsoft Windows version of Internet Explorer.',
     developer: 'Microsoft',
@@ -45,6 +38,6 @@ export const engines: Engine[] = [
     name: 'Contextual',
     description:
       'The rendering engine is contextual to the brower being used when viewing Webmail.',
-    prefix: 'Contextual',
+    prefix: ['Moz', 'Ms', 'WebKit'],
   },
 ];

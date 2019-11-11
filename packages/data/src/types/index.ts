@@ -1,6 +1,18 @@
-import { Developer, RenderEngine } from '../misc';
-
 type GlobalsString = string & {};
+
+/**
+ * Developer
+ *
+ * @see https://en.wikipedia.org/wiki/Comparison_of_webmail_providers
+ * */
+type Developer =
+  | 'Apple'
+  | 'Google'
+  | 'IBM'
+  | 'Microsoft'
+  | 'Mozilla'
+  | 'Verizon'
+  | 'Other';
 
 export interface Provider {
   abbr: string;
@@ -78,6 +90,34 @@ type WebmailService =
 type Type = 'Application' | 'Webmail';
 
 type Platform = 'Desktop' | 'Mobile' | 'Tablet' | 'Watch';
+
+/**
+ * Render Engine
+ *
+ * @see https://en.m.wikipedia.org/wiki/Comparison_of_browser_engines
+ * */
+type RenderEngine =
+  | 'Blink'
+  | 'Gecko'
+  | 'MsWord'
+  | 'Trident'
+  | 'WebKit'
+  | 'Contextual'
+  | 'Unknown';
+
+/**
+ * CSS (Vendor) Prefix
+ *
+ * @see https://en.m.wikipedia.org/wiki/Comparison_of_browser_engines_(CSS_support)#Vendor-specific
+ * */
+type VendorPrefix = 'Moz' | 'Ms' | 'Mso' | 'WebKit' | 'Unknown';
+
+export interface Engine {
+  name: RenderEngine;
+  prefix: VendorPrefix | VendorPrefix[];
+  description?: string;
+  developer?: Developer;
+}
 
 /**
  * Operating Systems
