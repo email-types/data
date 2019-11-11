@@ -13,8 +13,8 @@ const properties = Object.keys(alternatives).reduce<Record<string, string>>(
   {},
 );
 
-export const createPlugin = (
-  options: { prefix: boolean } = { prefix: true },
+export const createPlugin = <T>(
+  options: { prefix: T | boolean } = { prefix: true },
 ): Plugin => {
   const plugin: Plugin = (context, content) => {
     // only run on a property declaration

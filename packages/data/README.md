@@ -1,12 +1,12 @@
 [msotype]:
   https://github.com/email-types/email-types/tree/master/packages/msotype
-[stylis-mso]:
+[stylis-plugin-mso]:
   https://github.com/email-types/email-types/tree/master/packages/stylis-plugin-mso
 
 # Email Types Data
 
 General TypeScript definitions and compatibility data that can be used when
-building emails. Checkout [msotype] and [stylis-mso] for examples.
+building emails. Checkout [msotype] and [stylis-plugin-mso] for examples.
 
 ```sh
 yarn add --dev @email-types/data

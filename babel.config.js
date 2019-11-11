@@ -7,17 +7,6 @@ module.exports = (api) => {
   const plugins = [
     '@babel/plugin-syntax-dynamic-import',
     isTest && ['babel-plugin-dynamic-import-node'],
-    isEsm && [
-      '@babel/plugin-transform-runtime',
-      {
-        corejs: 3,
-        helpers: true,
-        regenerator: true,
-        useESModules: api.caller(
-          (caller) => !!(caller && caller.supportsStaticESM),
-        ),
-      },
-    ],
   ].filter(Boolean);
 
   return {
@@ -30,7 +19,6 @@ module.exports = (api) => {
           modules: isEsm ? false : 'commonjs',
           targets: isEsm ? { esmodules: true } : { node: 'current' },
           shippedProposals: true,
-          exclude: ['transform-typeof-symbol'],
         },
       ],
       ['@babel/preset-react', { development: isDev || isTest }],
