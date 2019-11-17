@@ -1,10 +1,10 @@
 import { EOL } from 'os';
-import { MSOProperty, features } from '@email-types/data/mso';
+import { MSO, features } from '@email-types/data/mso';
 import { is, log } from '../utils';
 
 export const createComment = (
   key: string,
-  property: MSOProperty,
+  property: MSO.Property,
 ): string | null => {
   const rows: string[] = [];
 

@@ -1,16 +1,16 @@
-import { alternatives } from './data/alternatives';
-import { fonts } from './data/fonts';
-import { standard } from './data/standard';
+import * as MSO from '../types/mso';
+import { alternatives } from './alternatives';
+import { standard } from './standard';
 
-export * from './data/features';
-export * from './data/syntaxes';
-export * from './data/types';
+export * from './operators';
+export * from './versions';
+export * from './features';
+export * from './syntaxes';
 export * from './types';
 
-export { alternatives, fonts, standard };
+export { alternatives, standard, MSO };
 
 export const properties = {
   ...alternatives,
-  ...fonts,
   ...standard,
 };

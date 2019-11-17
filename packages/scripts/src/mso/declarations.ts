@@ -1,5 +1,6 @@
 import { Property, getProperties } from './properties';
 import { Syntax, getSyntaxes } from './syntaxes';
+import { getOperators, getVersions } from './conditionals';
 import {
   Category,
   DataType,
@@ -21,6 +22,8 @@ export type Alias = Property | Syntax;
 export const getAliases = (): Alias[] => {
   const properties = getProperties();
   const syntaxes = getSyntaxes();
+  const operators = getOperators();
+  const versions = getVersions();
 
   const aliases: Alias[] = [];
 
@@ -43,6 +46,24 @@ export const getAliases = (): Alias[] => {
   });
 
   aliases.push(...properties, ...syntaxes);
+
+  // Conditional Operators
+  aliases.push({
+    key: '',
+    name: 'ConditionalOperator',
+    types: operators,
+    export: true,
+    hasLength: false,
+  });
+
+  // Conditional Versions
+  aliases.push({
+    key: '',
+    name: 'ConditionalVersions',
+    types: versions,
+    export: true,
+    hasLength: false,
+  });
 
   return aliases;
 };

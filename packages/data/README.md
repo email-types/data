@@ -14,22 +14,21 @@ yarn add --dev @email-types/data
 
 ## Data
 
-|                 | Description                                            | Exports                                         |
-| :-------------- | :----------------------------------------------------- | :---------------------------------------------- |
-| [**mso**](#mso) | Data about the different features of the MSO language. | • `properties` <br> • `syntaxes` <br> • `types` | `AlternativePropertiesHyphen` |
-| **features**    | _todo_                                                 | _todo_                                          |
-| **providers**   | _todo_                                                 | _todo_                                          |
+|                 | Description                                            | Exports                                                                              |
+| :-------------- | :----------------------------------------------------- | :----------------------------------------------------------------------------------- |
+| [**mso**](#mso) | Data about the different features of the MSO language. | • `properties` <br> • `syntaxes` <br> • `operators` <br> • `types` <br> • `versions` | `AlternativePropertiesHyphen` |
+| **features**    | _todo_                                                 | _todo_                                                                               |
+| **providers**   | _todo_                                                 | _todo_                                                                               |
 
 ### MSO
 
 #### Properties
 
-Data for MSO (Microsoft Office), including data for the `mso-` CSS vendor
-prefix. There are 3 categories of data.
+Property data for MSO (Microsoft Office), including data for the `mso-` CSS
+vendor prefix. There are 2 categories of property data.
 
 - **`alternatives`** - Properties that end with an `-alt` postfix that are
   direct alternatives to a standard CSS property.
-- **`fonts`** - Properties for the different MSO font features.
 - **`standard`** - Properties that correspond to a Microsoft Office feature.
   While these do not have a CSS equivalent, they may or may not have an effect
   on Microsoft Outlook
@@ -46,7 +45,17 @@ color: {
 }
 ```
 
+#### Operators
+
+Operator syntax that can be used to create MSO conditional expressions,
+comments.
+
 #### Types
 
 CSS basic data types, such as `<sting>` and `<length>`, that are acceptable
 values that can be used by MSO properties.
+
+#### Versions
+
+MSO version vectors that map to specific Outlook clients. This is commonly used
+to target specific versions of Outlook with conditional comments.

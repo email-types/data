@@ -1,23 +1,52 @@
-export type MSOProperty = {
-  syntax: string;
-  description?: string;
-  initial: string | number | null;
-  inherited: boolean;
-  shorthand: boolean;
-  features: string[];
+import { CssDataTypes } from '../types/mso';
+
+export const types: CssDataTypes = {
+  integer: {
+    links: [
+      {
+        title: 'MDN',
+        url: 'https://developer.mozilla.org/docs/Web/CSS/integer',
+      },
+    ],
+  },
+  length: {
+    links: [
+      {
+        title: 'MDN',
+        url: 'https://developer.mozilla.org/docs/Web/CSS/length',
+      },
+    ],
+  },
+  number: {
+    links: [
+      {
+        title: 'MDN',
+        url: 'https://developer.mozilla.org/docs/Web/CSS/number',
+      },
+    ],
+  },
+  percentage: {
+    links: [
+      {
+        title: 'MDN',
+        url: 'https://developer.mozilla.org/docs/Web/CSS/percentage',
+      },
+    ],
+  },
+  string: {
+    links: [
+      {
+        title: 'MDN',
+        url: 'https://developer.mozilla.org/docs/Web/CSS/string',
+      },
+    ],
+  },
+  url: {
+    links: [
+      {
+        title: 'MDN',
+        url: 'https://developer.mozilla.org/docs/Web/CSS/url',
+      },
+    ],
+  },
 };
-
-export type MSOProperties = Record<string, Readonly<MSOProperty>>;
-
-export interface MSOSyntax {
-  syntax: string;
-}
-
-export type MSOSyntaxes = Record<string, Readonly<MSOSyntax>>;
-
-export interface MSOFeature {
-  title: string;
-  url: string;
-}
-
-export type MSOFeatures = Record<string, Readonly<MSOFeature>>;

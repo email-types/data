@@ -7,7 +7,7 @@ import {
 } from './constants';
 
 export const getCssDataTypes = <T extends object>(): Record<string, T> => {
-  const cssDataTypes = cssData.reduce((results, name) => {
+  const cssDataTypes = Object.keys(cssData).reduce((results, name) => {
     if (name === 'number' || name === 'integer') {
       results[name] = {
         type: DataType.Number,
