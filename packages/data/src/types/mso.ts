@@ -1,3 +1,8 @@
+type Link = {
+  title: 'Microsoft' | 'MDN' | (string & {});
+  url: string;
+};
+
 export type Property = {
   syntax: string;
   description?: string;
@@ -22,9 +27,20 @@ export interface Feature {
 
 export type Features = Record<string, Readonly<Feature>>;
 
-export interface Link {
-  title: string;
-  url: string;
+export type CssDataTypes = Record<string, { links: Readonly<Link>[] }>;
+
+export interface Operator {
+  syntax: string;
+  description: string;
+  links?: Link[];
 }
 
-export type CssDataTypes = Record<string, { links?: Readonly<Link>[] }>;
+export type Operators = Record<string, Readonly<Operator>>;
+
+export interface Version {
+  syntax: string;
+  /* Valid Outlook versions */
+  versions: string[];
+}
+
+export type Versions = Record<string, Readonly<Version>>;

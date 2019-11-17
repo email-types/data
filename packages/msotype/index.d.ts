@@ -7322,3 +7322,16 @@ type SimpleLineStyle =
   | 'solid'
   | 'triple'
   | 'wave';
+
+export type ConditionalOperator = 'gt' | 'lt' | 'gte' | 'lte' | '|' | '!';
+
+export type ConditionalVersions =
+  | 'IE'
+  | 'mso'
+  | 'mso 9'
+  | 'mso 10'
+  | 'mso 11'
+  | 'mso 12'
+  | 'mso 14'
+  | 'mso 15'
+  | 'mso 16';

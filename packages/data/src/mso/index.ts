@@ -1,16 +1,16 @@
 import * as MSO from '../types/mso';
+import { operators, versions } from './conditionals';
 import { alternatives } from './alternatives';
-import { fonts } from './fonts';
 import { standard } from './standard';
 
+export * from './conditionals';
 export * from './features';
 export * from './syntaxes';
 export * from './types';
 
-export { alternatives, fonts, standard, MSO };
+export { alternatives, standard, operators, versions, MSO };
 
 export const properties = {
   ...alternatives,
-  ...fonts,
   ...standard,
 };

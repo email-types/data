@@ -29,7 +29,6 @@ prefix. There are 3 categories of data.
 
 - **`alternatives`** - Properties that end with an `-alt` postfix that are
   direct alternatives to a standard CSS property.
-- **`fonts`** - Properties for the different MSO font features.
 - **`standard`** - Properties that correspond to a Microsoft Office feature.
   While these do not have a CSS equivalent, they may or may not have an effect
   on Microsoft Outlook
