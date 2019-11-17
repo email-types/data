@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [10, 11, 12]
+        node: [10, 12]
       fail-fast: true
     name: Jest & EsLint @ Node ${{ matrix.node }}
     steps:
