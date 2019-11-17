@@ -1,6 +1,6 @@
 {
   "name": "stylis-plugin-mso",
-  "version": "0.0.1-canary.0",
+  "version": "0.0.1-canary.1",
   "description": "A Stylis plugin that adds support for the mso- CSS vendor prefix",
   "main": "dist/cjs/index.js",
   "types": "dist/cjs/index.d.ts",
@@ -16,7 +16,7 @@
     "dev": "run-p \"build:* --watch\""
   },
   "dependencies": {
-    "@email-types/data": "1.0.0-canary.1"
+    "@email-types/data": "1.0.0-canary.2"
   },
   "devDependencies": {
     "@emotion/cache": "^10.0.19",
