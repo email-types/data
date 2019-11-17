@@ -7323,7 +7323,7 @@ type SimpleLineStyle =
   | 'triple'
   | 'wave';
 
-export type ConditionalOperator = 'gt' | 'lt' | 'gte' | 'lte' | '|' | '!';
+export type ConditionalOperator = '&' | 'gt' | 'gte' | 'lt' | 'lte' | '!' | '|';
 
 export type ConditionalVersions =
   | 'IE'
