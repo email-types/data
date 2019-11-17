@@ -1,12 +1,16 @@
 # Change Log
 
-All notable changes to this project will be documented in this file.
-See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
 ## 0.0.1-canary.0 - 2019-11-10
 
 #### 🚀 Updates
 
-- **[stylis-plugin-mso]** Stylis plugin that adds support for the mso- css vendor prefix (#1) ([399ef59](https://github.com/email-types/email-types/tree/master/packages/stylis-plugin-mso/commit/399ef59)), closes [#1](https://github.com/email-types/email-types/tree/master/packages/stylis-plugin-mso/issues/1)
+- **[stylis-plugin-mso]** Stylis plugin that adds support for the mso- css
+  vendor prefix (#1)
+  ([399ef59](https://github.com/email-types/email-types/tree/master/packages/stylis-plugin-mso/commit/399ef59)),
+  closes
+  [#1](https://github.com/email-types/email-types/tree/master/packages/stylis-plugin-mso/issues/1)
 
 **Note:** Version bump only for package stylis-plugin-mso

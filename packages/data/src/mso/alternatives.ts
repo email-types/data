@@ -1,6 +1,6 @@
-import { MSOProperties } from '../types';
+import { Properties } from '../types/mso';
 
-export const alternatives: MSOProperties = {
+export const alternatives: Properties = {
   'mso-border-alt': {
     syntax: '<border-art> | <border-style> | <color> | <length> | <line-width>',
     description:

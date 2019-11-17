@@ -6,8 +6,8 @@
   ],
   "scripts": {
     "postinstall": "lerna bootstrap",
-    "clean": "lerna exec -- rm -rf ./{dist,*.tsbuildinfo}",
-    "clean:prune": "yarn clean && lerna exec -- rm -rf ./node_modules  && rm -rf ./{node_modules,coverage,*.lock,*.log}",
+    "clean": "lerna exec \"rm -rf ./{dist,*.tsbuildinfo}\"",
+    "clean:prune": "rm -rf ./{,*/,**/*/}{node_modules,coverage,*.lock,*.log,*.tsbuildinfo,dist}",
     "build": "yarn clean && lerna run build --ignore=@email-types/scripts && yarn types",
     "dev": "run-p dev:* ",
     "dev:all": "lerna run dev --parallel",
@@ -16,24 +16,22 @@
     "jest": "jest --colors --logHeapUsage",
     "jest:coverage": "yarn run jest --coverage",
     "lint": "yarn run eslint .",
-    "eslint": "eslint --color --ext .ts,.js --report-unused-disable-directives",
-    "pretty": "prettier ./{,*/,**/}*.{js,ts,md,json} --write",
+    "eslint": "eslint --ext js,jsx,ts,tsx --max-warnings=0 --report-unused-disable-directives",
+    "prettier": "prettier \"**/*.{js,jsx,ts,tsx,md,mdx,json}\" --write",
     "types": "tsc --build packages/*/tsconfig.json",
-    "release": "yarn build && lerna publish",
+    "prepublishOnly": "NODE_ENV=production yarn run build",
+    "release": "lerna publish",
     "release:publish": "lerna publish from-git",
     "release:version": "lerna version --conventional-commits --changelog-preset conventional-changelog-beemo --create-release github --push",
     "canary:version": "lerna version prerelease --preid canary --conventional-commits --changelog-preset conventional-changelog-beemo --create-release github --push",
     "emailtypes": "yarn workspace @email-types/scripts build"
   },
   "lint-staged": {
-    "**/*.md": [
-      "yarn run prettier",
-      "git add"
+    "**/*.{js,jsx,ts,tsx,md,mdx,json}": [
+      "yarn run prettier"
     ],
-    "**/*.ts": [
-      "yarn run prettier",
-      "yarn run lint --fix",
-      "git add"
+    "**/*.{js,jsx,ts,tsx}": [
+      "yarn run lint --fix"
     ]
   },
   "husky": {
@@ -49,18 +47,18 @@
     "@babel/preset-react": "^7.7.0",
     "@babel/preset-typescript": "^7.7.2",
     "@postmates/eslint-config": "^5.1.1",
-    "@types/eslint": "^6.1.1",
-    "@types/jest": "^24.0.22",
-    "@types/node": "^12.11.1",
+    "@types/eslint": "^6.1.3",
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.8",
     "@types/prettier": "^1.18.3",
-    "@typescript-eslint/eslint-plugin": "^2.6.0",
-    "@typescript-eslint/parser": "^2.6.0",
+    "@typescript-eslint/eslint-plugin": "^2.7.0",
+    "@typescript-eslint/parser": "^2.7.0",
     "babel-plugin-dynamic-import-node": "^2.3.0",
-    "conventional-changelog-beemo": "^1.5.1",
+    "conventional-changelog-beemo": "^1.5.3",
     "eslint": "^6.6.0",
-    "eslint-config-prettier": "^6.5.0",
+    "eslint-config-prettier": "^6.6.0",
     "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jest": "^23.0.2",
+    "eslint-plugin-jest": "^23.0.4",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.16.0",
@@ -68,11 +66,11 @@
     "husky": "^3.0.9",
     "jest": "^24.9.0",
     "jest-emotion": "^10.0.17",
-    "lerna": "^3.18.3",
-    "lint-staged": "^9.4.2",
+    "lerna": "^3.18.4",
+    "lint-staged": "^10.0.0-1",
     "npm-run-all": "^4.1.5",
-    "prettier": "^1.18.2",
-    "typescript": "^3.6.4"
+    "prettier": "^1.19.1",
+    "typescript": "^3.7.2"
   },
   "keywords": [
     "css-in-js",

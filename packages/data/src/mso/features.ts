@@ -1,6 +1,6 @@
-import { MSOFeatures } from '../types';
+import { Features } from '../types/mso';
 
-export const features: MSOFeatures = {
+export const features: Features = {
   animations: {
     title: 'Animations',
     url: `https://stigmortenmyre.no/mso/html/powerpoint/ppconanimations.htm`,

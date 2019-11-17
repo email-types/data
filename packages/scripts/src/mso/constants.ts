@@ -1,3 +1,18 @@
+export type Category =
+  | typeof categories[number]
+  | 'Properties'
+  | 'FontProperties';
+
+export enum DataType {
+  Globals,
+  Length,
+  Number,
+  NumericLiteral,
+  String,
+  StringLiteral,
+  Syntax,
+}
+
 export const categories = [
   'AlternativeProperties',
   'StandardProperties',
@@ -22,18 +37,3 @@ export const genericLength = {
   name: 'TLength',
   value: 'GlobalsString | 0',
 };
-
-export type Category =
-  | typeof categories[number]
-  | 'Properties'
-  | 'FontProperties';
-
-export enum DataType {
-  Globals,
-  Length,
-  Number,
-  NumericLiteral,
-  String,
-  StringLiteral,
-  Syntax,
-}

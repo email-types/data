@@ -1,6 +1,6 @@
-import { MSOProperties } from '@email-types/data/mso';
+import { MSO } from '@email-types/data/mso';
 
-export const msPatches: MSOProperties = {
+export const msPatches: MSO.Properties = {
   'ms-interpolation-mode': {
     syntax: 'nearest-neighbor | bicubic',
     description:

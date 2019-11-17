@@ -1,6 +1,6 @@
-import { MSOProperties } from '../types';
+import { Properties } from '../types/mso';
 
-export const fonts: MSOProperties = {
+export const fonts: Properties = {
   'mso-ansi-font-size': {
     syntax: '<font-size> | <length> | <percentage>',
     initial: 'medium',

@@ -1,6 +1,6 @@
-import { MSOProperties } from '../types';
+import { Properties } from '../types/mso';
 
-export const standard: MSOProperties = {
+export const standard: Properties = {
   'mso-background': {
     syntax: 'auto | <color>',
     initial: null,
