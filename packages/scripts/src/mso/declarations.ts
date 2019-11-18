@@ -59,7 +59,7 @@ export const getAliases = (): Alias[] => {
   // Conditional Versions
   aliases.push({
     key: '',
-    name: 'ConditionalVersions',
+    name: 'ConditionalVersion',
     types: versions,
     export: true,
     hasLength: false,
