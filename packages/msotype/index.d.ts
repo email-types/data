@@ -7325,7 +7325,7 @@ type SimpleLineStyle =
 
 export type ConditionalOperator = '&' | 'gt' | 'gte' | 'lt' | 'lte' | '!' | '|';
 
-export type ConditionalVersions =
+export type ConditionalVersion =
   | 'IE'
   | 'mso'
   | 'mso 9'
