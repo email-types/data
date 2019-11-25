@@ -1,9 +1,15 @@
-const extensions = ['.ts', '.js', '.jsx', '.json'];
+const extensions = ['.ts', '.tsx', '.js', '.jsx', '.json'];
 
 module.exports = {
   root: true,
-  extends: ['@postmates', 'prettier'],
-  plugins: ['import', 'prettier'],
+  extends: [
+    '@postmates',
+    'prettier',
+    'prettier/react',
+    'prettier/standard',
+    'prettier/@typescript-eslint',
+  ],
+  plugins: ['prettier'],
   env: { node: true },
   settings: {
     'import/extensions': extensions,
@@ -20,7 +26,6 @@ module.exports = {
 
     // typescript
     '@typescript-eslint/explicit-function-return-type': 0,
-    '@typescript-eslint/no-use-before-define': 0,
   },
   overrides: [
     {
@@ -28,6 +33,7 @@ module.exports = {
       rules: {
         // prefer consistency
         '@typescript-eslint/no-inferrable-types': 0,
+        '@typescript-eslint/no-use-before-define': 0,
         '@typescript-eslint/explicit-function-return-type': 2,
       },
     },
