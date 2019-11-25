@@ -6,25 +6,24 @@
   ],
   "scripts": {
     "postinstall": "lerna bootstrap",
-    "clean": "lerna exec \"rm -rf ./{dist,*.tsbuildinfo}\"",
+    "clean": "rm -rf ./packages/*/{*.tsbuildinfo,dist}",
     "clean:prune": "rm -rf ./{,*/,**/*/}{node_modules,coverage,*.lock,*.log,*.tsbuildinfo,dist}",
-    "build": "yarn clean && lerna run build --ignore=@email-types/scripts && yarn types",
+    "build": "yarn clean && lerna run build --ignore=@email-types/scripts && yarn types && yarn run gen mso",
     "dev": "run-p dev:* ",
     "dev:all": "lerna run dev --parallel",
     "dev:types": "run-p \"types:* --watch\"",
+    "gen": "yarn workspace @email-types/scripts build",
     "test": "yarn build && yarn lint && yarn jest:coverage",
     "jest": "jest --colors --logHeapUsage",
     "jest:coverage": "yarn run jest --coverage",
-    "lint": "yarn run eslint .",
-    "eslint": "eslint --ext js,jsx,ts,tsx --max-warnings=0 --report-unused-disable-directives",
+    "lint": "eslint . --ext js,jsx,ts,tsx --max-warnings=0 --report-unused-disable-directives",
     "prettier": "prettier \"**/*.{js,jsx,ts,tsx,md,mdx,json}\" --write",
     "types": "tsc --build packages/*/tsconfig.json",
     "prepublishOnly": "NODE_ENV=production yarn run build",
     "release": "lerna publish",
     "release:publish": "lerna publish from-git",
     "release:version": "lerna version --conventional-commits --changelog-preset conventional-changelog-beemo --create-release github --push",
-    "canary:version": "lerna version prerelease --preid canary --conventional-commits --changelog-preset conventional-changelog-beemo --create-release github --push",
-    "emailtypes": "yarn workspace @email-types/scripts build"
+    "canary:version": "lerna version prerelease --preid canary --conventional-commits --changelog-preset conventional-changelog-beemo --create-release github --push"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx,md,mdx,json}": [
