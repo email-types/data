@@ -1,4 +1,4 @@
-import { is } from '../src/utils';
+import { is } from '../utils';
 
 describe('array', () => {
   it('returns true if the value is an array', () => {

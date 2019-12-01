@@ -12,8 +12,8 @@
     "mso.js"
   ],
   "scripts": {
-    "build": "TARGET=cjs babel --root-mode upward -x .ts,.tsx src -d dist",
-    "dev": "TARGET=cjs babel --root-mode upward -x .ts,.tsx src -d dist -w"
+    "build": "babel --root-mode upward -x .ts,.tsx src -d dist",
+    "dev": "babel --root-mode upward -x .ts,.tsx src -d dist -w"
   },
   "publishConfig": {
     "access": "public"

@@ -7,8 +7,7 @@ export type Command = (argv: readonly string[]) => void;
 const defaultCmd = 'mso';
 const cmds: { [cmd: string]: () => Promise<Command> } = {
   /* eslint-disable import/no-cycle */
-  mso: async () => import('./cli/mso').then((c) => c.command),
-  // download: async () => import('./download').then((c) => c.command),
+  mso: async () => import('./tasks/mso').then((c) => c.command),
   /* eslint-enable import/no-cycle */
 };
 
