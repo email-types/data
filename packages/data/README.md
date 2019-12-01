@@ -1,7 +1,6 @@
-[msotype]:
-  https://github.com/email-types/email-types/tree/master/packages/msotype
+[msotype]: https://github.com/email-types/email-types/msotype
 [stylis-plugin-mso]:
-  https://github.com/email-types/email-types/tree/master/packages/stylis-plugin-mso
+  https://github.com/email-types/email-types/stylis-plugin-mso
 
 # Email Types Data
 
