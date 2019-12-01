@@ -1,6 +1,14 @@
 module.exports = {
   collectCoverageFrom: ['packages/*/src/**/*.ts', 'scripts/**/*.ts'],
   coverageDirectory: 'coverage',
+  coverageThreshold: {
+    global: {
+      statements: 0,
+      branches: 0,
+      functions: 0,
+      lines: 0,
+    },
+  },
   coveragePathIgnorePatterns: ['/node_modules/', '/dist/', '/test/'],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'node'],
   moduleNameMapper: {

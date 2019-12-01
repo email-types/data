@@ -1,7 +1,4 @@
-type Link = {
-  title: 'Microsoft' | 'MDN' | (string & {});
-  url: string;
-};
+import { Link } from './misc';
 
 export type Property = {
   syntax: string;
