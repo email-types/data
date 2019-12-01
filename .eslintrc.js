@@ -23,9 +23,6 @@ module.exports = {
 
     // prettier
     'prettier/prettier': 2,
-
-    // typescript
-    '@typescript-eslint/explicit-function-return-type': 0,
   },
   overrides: [
     {
@@ -33,8 +30,6 @@ module.exports = {
       rules: {
         // prefer consistency
         '@typescript-eslint/no-inferrable-types': 0,
-        '@typescript-eslint/no-use-before-define': 0,
-        '@typescript-eslint/explicit-function-return-type': 2,
       },
     },
     {
@@ -46,10 +41,6 @@ module.exports = {
         node: true,
       },
       rules: {
-        // import
-        'import/no-extraneous-dependencies': 0,
-        'import/no-unresolved': 0,
-
         // jest
         'jest/prefer-to-be-null': 2,
         'jest/prefer-to-be-undefined': 2,

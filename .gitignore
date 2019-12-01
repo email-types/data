@@ -5,7 +5,6 @@ node_modules
 # build
 dist
 tsconfig.tsbuildinfo
-packages/msotype/index.d.ts
 
 # test
 coverage
