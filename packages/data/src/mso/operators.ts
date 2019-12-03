@@ -1,6 +1,9 @@
-import { Operators } from '../types/mso';
+import { create } from '../utils/create';
+import * as MSO from '../types/mso';
 
-export const operators: Operators = {
+const validate = create<MSO.Operator>();
+
+export const operators = validate({
   and: {
     syntax: '&',
     description:
@@ -85,4 +88,6 @@ export const operators: Operators = {
       },
     ],
   },
-};
+});
+
+export default operators;
