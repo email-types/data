@@ -1,6 +1,9 @@
-import { Features } from '../types/mso';
+import { create } from '../utils/create';
+import * as MSO from '../types/mso';
 
-export const features: Features = {
+const validate = create<MSO.Group>();
+
+export const groups = validate({
   animations: {
     title: 'Animations',
     url: `https://stigmortenmyre.no/mso/html/powerpoint/ppconanimations.htm`,
@@ -93,4 +96,6 @@ export const features: Features = {
     title: 'Worksheets',
     url: `https://stigmortenmyre.no/mso/html/excel/xlcontables.htm`,
   },
-};
+});
+
+export default groups;

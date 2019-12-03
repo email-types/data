@@ -1,16 +1,10 @@
 import * as MSO from '../types/mso';
-import { alternatives } from './alternatives';
-import { standard } from './standard';
 
+export { MSO };
+
+export * from './groups';
 export * from './operators';
-export * from './versions';
-export * from './features';
+export * from './properties';
 export * from './syntaxes';
 export * from './types';
-
-export { alternatives, standard, MSO };
-
-export const properties = {
-  ...alternatives,
-  ...standard,
-};
+export * from './versions';

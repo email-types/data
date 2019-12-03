@@ -1,4 +1,4 @@
-import { Link } from './misc';
+import { Link } from './common';
 
 export type Property = {
   syntax: string;
@@ -6,25 +6,21 @@ export type Property = {
   initial: string | number | null;
   inherited: boolean;
   shorthand: boolean;
-  features: string[];
+  groups?: string[]; // Properties are organized into Groups (MSOGroups[])
 };
-
-export type Properties = Record<string, Readonly<Property>>;
 
 export interface Syntax {
   syntax: string;
 }
 
-export type Syntaxes = Record<string, Readonly<Syntax>>;
-
-export interface Feature {
+export interface Group {
   title: string;
   url: string;
 }
 
-export type Features = Record<string, Readonly<Feature>>;
-
-export type CssDataTypes = Record<string, { links: Readonly<Link>[] }>;
+export type CssDataType = {
+  links: Readonly<Link>[];
+};
 
 export interface Operator {
   syntax: string;
@@ -32,12 +28,8 @@ export interface Operator {
   links?: Link[];
 }
 
-export type Operators = Record<string, Readonly<Operator>>;
-
 export interface Version {
   syntax: string;
   /* Valid Outlook versions */
   versions: string[];
 }
-
-export type Versions = Record<string, Readonly<Version>>;

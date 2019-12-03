@@ -18,33 +18,29 @@ module.exports = {
     },
   },
   rules: {
-    'no-console': 0,
-    'no-use-before-define': 0,
-
-    // prettier
-    'prettier/prettier': 2,
+    'prettier/prettier': 'error',
   },
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
       rules: {
         // prefer consistency
-        '@typescript-eslint/no-inferrable-types': 0,
+        '@typescript-eslint/no-inferrable-types': 'off',
       },
     },
     {
       files: ['*.test.ts'],
-      extends: ['plugin:jest/recommended'],
+      extends: ['plugin:jest/recommended', 'plugin:jest/style'],
       plugins: ['jest'],
-      env: {
-        jest: true,
-        node: true,
-      },
+      env: { jest: true },
       rules: {
-        // jest
-        'jest/prefer-to-be-null': 2,
-        'jest/prefer-to-be-undefined': 2,
-        'jest/prefer-to-have-length': 2,
+        '@typescript-eslint/no-empty-function': 'off',
+      },
+    },
+    {
+      files: ['scripts/**/*'],
+      rules: {
+        'no-console': 'off',
       },
     },
   ],

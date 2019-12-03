@@ -1,6 +1,9 @@
-import { CssDataTypes } from '../types/mso';
+import { create } from '../utils/create';
+import * as MSO from '../types/mso';
 
-export const types: CssDataTypes = {
+const validate = create<MSO.CssDataType>();
+
+export const cssDataTypes = validate({
   integer: {
     links: [
       {
@@ -49,4 +52,6 @@ export const types: CssDataTypes = {
       },
     ],
   },
-};
+});
+
+export default cssDataTypes;

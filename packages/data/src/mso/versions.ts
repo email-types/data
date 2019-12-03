@@ -1,6 +1,9 @@
-import { Versions } from '../types/mso';
+import { create } from '../utils/create';
+import * as MSO from '../types/mso';
 
-export const versions: Versions = {
+const validate = create<MSO.Version>();
+
+export const versions = validate({
   ie: {
     syntax: 'IE',
     versions: ['2000', '2002', '2003'],
@@ -37,4 +40,6 @@ export const versions: Versions = {
     syntax: 'mso 16',
     versions: ['2016'],
   },
-};
+});
+
+export default versions;

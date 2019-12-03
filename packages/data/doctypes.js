@@ -1,1 +1,1 @@
-module.exports = require('./dist/doctypes');
+module.exports = require('./dist/misc/doctypes');

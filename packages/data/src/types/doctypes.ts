@@ -1,4 +1,4 @@
-import { Link } from './misc';
+import { Link } from './common';
 
 export type Doctype = {
   description?: string;
@@ -8,5 +8,3 @@ export type Doctype = {
   systemIdentifier: string | null;
   links?: Link[];
 };
-
-export type Doctypes = Record<string, Doctype>;
