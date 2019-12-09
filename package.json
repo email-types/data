@@ -10,6 +10,7 @@
     "clean:prune": "rm -rf ./{,*/,**/*/}{node_modules,coverage,*.lock,*.log,*.tsbuildinfo,dist}",
     "build": "yarn clean && lerna run build --stream && yarn types",
     "gen": "yarn run ts scripts/index.ts",
+    "data:validate": "yarn ts packages/data/scripts/validate.ts",
     "ts": "ts-node --project ./tsconfig.node.json",
     "test": "yarn build && yarn lint && yarn jest:coverage",
     "jest": "jest --colors --logHeapUsage",

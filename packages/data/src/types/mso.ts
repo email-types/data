@@ -1,4 +1,5 @@
 import { Link } from './common';
+import { MSOGroups } from '../mso/groups';
 
 export type Property = {
   syntax: string;
@@ -6,26 +7,24 @@ export type Property = {
   initial: string | number | null;
   inherited: boolean;
   shorthand: boolean;
-  groups?: string[]; // Properties are organized into Groups (MSOGroups[])
+  groups?: (keyof typeof MSOGroups)[];
 };
 
 export interface Syntax {
   syntax: string;
 }
 
-export interface Group {
-  title: string;
-  url: string;
-}
-
 export type CssDataType = {
-  links: Readonly<Link>[];
+  name: string;
+  syntax: string;
+  description?: string;
+  links?: Readonly<Link>[];
 };
 
 export interface Operator {
   syntax: string;
   description: string;
-  links?: Link[];
+  links?: Readonly<Link>[];
 }
 
 export interface Version {
