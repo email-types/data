@@ -1,10 +1,5 @@
-import {
-  validate as validateType,
-  Any,
-  Nullable,
-  Optional,
-  Primitive,
-} from 'validate-typescript';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Any, Nullable, Optional, Primitive } from 'validate-typescript';
 
 type ValueType<
   T extends ReadonlyArray<any> | ArrayLike<any> | Record<any, any>
@@ -32,26 +27,22 @@ export const OneOfType = <T extends ReadonlyArray<any>>(
 export const OneOfTypeOrNull = <T extends ReadonlyArray<any>>(
   arr: T,
 ): ValueType<T> | null => {
-  return Any([...arr.map((n) => n), null]);
+  return Any([...arr.map((n) => Nullable(n))]);
 };
 
-export const MulipleOfType = <T extends ReadonlyArray<any>>(
+export const ArrayOfType = <T extends ReadonlyArray<any>>(
   arr: T,
 ): ValueType<T>[] => {
   return Any([arr.map((n) => n)]);
 };
 
-export const MulipleOfTypeOrNull = <T extends ReadonlyArray<any>>(
+export const ArrayOfTypeOrNull = <T extends ReadonlyArray<any>>(
   arr: T,
 ): ValueType<T>[] | null => {
   return Any([Nullable(arr.map((n) => n))]);
 };
 
-export const OptionalString = () => Optional(Primitive(String));
+export const OptionalString = (): string | undefined =>
+  Optional(Primitive(String));
 
-export const NullableString = () => Nullable(Primitive(String));
-
-export const createValidation = <T>(schema: T) => (...data: T[]): T[] => {
-  data.forEach((d) => validateType(schema, d));
-  return data;
-};
+export const NullableString = (): string | null => Nullable(Primitive(String));

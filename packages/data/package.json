@@ -6,6 +6,8 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist",
+    "developers.d.ts",
+    "developers.js",
     "doctypes.d.ts",
     "doctypes.js",
     "mso.d.ts",
@@ -18,7 +20,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "devDependencies": {
+  "dependencies": {
     "validate-typescript": "^4.0.2"
   },
   "keywords": [

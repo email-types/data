@@ -1,6 +1,6 @@
-import { validate } from './doctypes.scheme';
+import { scheme } from './doctypes.scheme';
 
-export const doctypes = validate(
+export const doctypes: typeof scheme[] = [
   {
     name: 'HTML 5',
     description:
@@ -54,4 +54,4 @@ export const doctypes = validate(
     publicIdentifier: '-//W3C//DTD XHTML 1.0 Transitional//EN',
     systemIdentifier: 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd',
   },
-);
+];

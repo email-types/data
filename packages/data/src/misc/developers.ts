@@ -1,8 +1,6 @@
-import { validate } from './developers.scheme';
+import { scheme } from './developers.scheme';
 
-// type NameTypeTest = typeof developers[number]['name'];
-
-export const developers = validate(
+export const developers: typeof scheme[] = [
   {
     name: 'Apple',
     description: '',
@@ -52,4 +50,4 @@ export const developers = validate(
     engines: ['Unknown'],
     os: ['Linux', 'Unknown'],
   },
-);
+];

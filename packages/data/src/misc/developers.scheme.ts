@@ -1,9 +1,8 @@
 import {
   OptionalString,
   OneOfType,
-  MulipleOfType,
-  MulipleOfTypeOrNull,
-  createValidation,
+  ArrayOfType,
+  ArrayOfTypeOrNull,
 } from '../utils/validations';
 
 const names = [
@@ -70,12 +69,10 @@ const operatingSystems = [
   'Unknown',
 ] as const;
 
-const schema = {
+export const scheme = {
   name: OneOfType(names),
   description: OptionalString(),
-  clients: MulipleOfType(emailClients),
-  engines: MulipleOfTypeOrNull(renderingEngines),
-  os: MulipleOfTypeOrNull(operatingSystems),
+  clients: ArrayOfType(emailClients),
+  engines: ArrayOfTypeOrNull(renderingEngines),
+  os: ArrayOfTypeOrNull(operatingSystems),
 };
-
-export const validate = createValidation(schema);

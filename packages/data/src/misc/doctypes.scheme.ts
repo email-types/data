@@ -3,7 +3,6 @@ import {
   OptionalString,
   OneOfTypeOrNull,
   NullableString,
-  createValidation,
 } from '../utils/validations';
 
 const names = [
@@ -15,17 +14,15 @@ const names = [
   'XHTML 1.0 Transitional',
 ] as const;
 
-const element = ['html', 'svg', 'math'] as const;
+const elements = ['html', 'svg', 'math'] as const;
 
-const keyword = ['public', 'system'] as const;
+const keywords = ['public', 'system'] as const;
 
-const schema = {
+export const scheme = {
   name: OneOfType(names),
   description: OptionalString(),
-  element: OneOfType(element),
-  keyword: OneOfTypeOrNull(keyword),
+  element: OneOfType(elements),
+  keyword: OneOfTypeOrNull(keywords),
   publicIdentifier: NullableString(),
   systemIdentifier: NullableString(),
 };
-
-export const validate = createValidation(schema);

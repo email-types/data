@@ -4,10 +4,10 @@ import { log } from './utils';
 
 export type Command = (argv: readonly string[]) => void;
 
-const defaultCmd = 'mso';
+const defaultCmd = 'validate';
 const cmds: { [cmd: string]: () => Promise<Command> } = {
   /* eslint-disable import/no-cycle */
-  mso: async () => import('./tasks/mso').then((c) => c.command),
+  validate: async () => import('./tasks/validate').then((c) => c.command),
   /* eslint-enable import/no-cycle */
 };
 
