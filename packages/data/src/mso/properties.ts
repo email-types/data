@@ -1,6 +1,6 @@
-import * as MSO from '../types/mso';
+import { Properties } from './properties.types';
 
-export const properties: Record<string, MSO.Property> = {
+export const properties: Properties = {
   'mso-ansi-font-size': {
     syntax: '<font-size> | <length> | <percentage>',
     initial: 'medium',
@@ -2698,5 +2698,3 @@ export const properties: Record<string, MSO.Property> = {
     groups: ['MSO Worksheets'],
   },
 };
-
-export default properties;

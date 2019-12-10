@@ -1,6 +1,6 @@
-import { scheme } from './doctypes.scheme';
+import { Doctypes } from './doctypes.types';
 
-export const doctypes: typeof scheme[] = [
+export const doctypes: Doctypes = [
   {
     name: 'HTML 5',
     description:

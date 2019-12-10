@@ -1,6 +1,6 @@
-import * as MSO from '../types/mso';
+import { Operators } from './operators.types';
 
-export const operators: Record<string, MSO.Operator> = {
+export const operators: Operators = {
   and: {
     syntax: '&',
     description:
@@ -13,7 +13,7 @@ export const operators: Record<string, MSO.Operator> = {
       },
     ],
   },
-  greaterThan: {
+  greater: {
     syntax: 'gt',
     description:
       'The greater-than operator. Returns true if the first argument is greater than the second argument.',
@@ -25,7 +25,7 @@ export const operators: Record<string, MSO.Operator> = {
       },
     ],
   },
-  greaterThanOrEqual: {
+  greaterOrEqual: {
     syntax: 'gte',
     description:
       'The greater-than or equal operator. Returns true if the first argument is greater than or equal to the second argument.',
@@ -37,7 +37,7 @@ export const operators: Record<string, MSO.Operator> = {
       },
     ],
   },
-  lessThan: {
+  less: {
     syntax: 'lt',
     description:
       'The less-than operator. Returns true if the first argument is less than the second argument.',
@@ -49,7 +49,7 @@ export const operators: Record<string, MSO.Operator> = {
       },
     ],
   },
-  lessThanOrEqual: {
+  lessOrEqual: {
     syntax: 'lte',
     description:
       'The less-than or equal operator. Returns true if the first argument is less than or equal to the second argument.',
@@ -86,5 +86,3 @@ export const operators: Record<string, MSO.Operator> = {
     ],
   },
 };
-
-export default operators;

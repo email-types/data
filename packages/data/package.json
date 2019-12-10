@@ -20,9 +20,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {
-    "validate-typescript": "^4.0.2"
-  },
   "keywords": [
     "data",
     "emails",

@@ -1,6 +1,6 @@
-import * as MSO from '../types/mso';
+import { Versions } from './versions.types';
 
-export const versions: Record<string, MSO.Version> = {
+export const versions: Versions = {
   ie: {
     syntax: 'IE',
     versions: ['2000', '2002', '2003'],
@@ -38,5 +38,3 @@ export const versions: Record<string, MSO.Version> = {
     versions: ['2016'],
   },
 };
-
-export default versions;

@@ -1,10 +1,24 @@
-import { validate } from 'validate-typescript';
+import { resolve } from 'path';
+import { outputJson } from 'fs-extra';
 import { doctypes } from '../../packages/data/dist/misc/doctypes';
-import { scheme } from '../../packages/data/dist/misc/doctypes.scheme';
 
-type Result = { data: number; result: number };
+type Result = { result: number };
 
-export default (): Result => {
-  const result = doctypes.map((d) => validate(scheme, d));
-  return { data: doctypes.length, result: result.length };
+const clean = (_: string, value: unknown): unknown => {
+  if (value === null || value === '' || value === [] || value === {}) {
+    return undefined;
+  }
+  return value;
+};
+
+export default async (): Promise<Result> => {
+  const data = doctypes.reduce((acc, o) => {
+    acc[o.name.toLowerCase().replace(/\s/g, '-')] = o;
+    return acc;
+  }, {} as Record<string, typeof doctypes[number]>);
+
+  const output = resolve(process.cwd(), 'packages/data/json/doctypes.json');
+  await outputJson(output, data, { replacer: clean });
+
+  return { result: doctypes.length };
 };

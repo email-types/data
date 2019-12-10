@@ -1,8 +1,7 @@
-import * as MSO from '../types/mso';
+import { DataTypes } from './data-types.types';
 
-export const cssDataTypes: MSO.CssDataType[] = [
-  {
-    name: 'integer',
+export const dataTypes: DataTypes = {
+  integer: {
     syntax: '<number>',
     description:
       'The `<integer>` CSS data type is a special type of `<number>` that represents a whole number, whether positive or negative.',
@@ -13,8 +12,7 @@ export const cssDataTypes: MSO.CssDataType[] = [
       },
     ],
   },
-  {
-    name: 'length',
+  length: {
     syntax: '<string> | <number>',
     description: 'The `<length>` CSS data type represents a distance value.',
     links: [
@@ -24,8 +22,7 @@ export const cssDataTypes: MSO.CssDataType[] = [
       },
     ],
   },
-  {
-    name: 'number',
+  number: {
     syntax: '<number>',
     description:
       'The `<number>` CSS data type represents a number, being either an integer or a number with a fractional component.',
@@ -36,8 +33,7 @@ export const cssDataTypes: MSO.CssDataType[] = [
       },
     ],
   },
-  {
-    name: 'percentage',
+  percentage: {
     syntax: '<string>',
     description:
       "The `<percentage>` CSS data type represents a percentage value. It is often used to define a size as relative to an element's parent object.",
@@ -48,8 +44,7 @@ export const cssDataTypes: MSO.CssDataType[] = [
       },
     ],
   },
-  {
-    name: 'string',
+  string: {
     syntax: '<string>',
     description:
       'The `<string>` CSS data type represents a sequence of characters.',
@@ -60,8 +55,7 @@ export const cssDataTypes: MSO.CssDataType[] = [
       },
     ],
   },
-  {
-    name: 'url',
+  url: {
     syntax: '<string>',
     description:
       'The `<url>` CSS data type denotes a pointer to a resource, such as an image or a font.',
@@ -72,6 +66,4 @@ export const cssDataTypes: MSO.CssDataType[] = [
       },
     ],
   },
-];
-
-export default cssDataTypes;
+};
