@@ -2,8 +2,8 @@ import { Application } from './application.types';
 import { Developer, Protocol, SecureProtocol } from './features.types';
 import { RenderingEngine } from './rendering-engines.types';
 import { Webmail } from './webmail.types';
-import { Doctype } from '../html/doctypes.types';
-import { Link } from '../common';
+import { Link, Unknown } from '../common';
+import { Doctype } from '../html';
 
 /**
  * Email Client Names
@@ -30,6 +30,13 @@ type Name =
   | 'Windows Mail'
   | 'Yahoo Mail';
 
+type DoctypeSupport = {
+  /* The doctype used by the platform when no doctype is set. When set to `None`, no doctype will be used unless you set one. */
+  preset: Doctype['name'] | 'None';
+  /* The supported doctype or a list of supported doctypes. When set to `None`, any doctype that you set will be ignored. */
+  supports: Doctype['name'] | Doctype['name'][] | 'None';
+};
+
 type Platform = {
   /* Name of the platform */
   name: string;
@@ -38,9 +45,15 @@ type Platform = {
   /* Kind of platform */
   kind: Application['name'] | Webmail['name'];
   /* Rendering Engine (defines css prefix) */
-  engine: RenderingEngine['name'] | 'Unknown';
-  /* Doctype that this platform uses, regardless of what you define. When set to `Inherits`, the doctype uses it's parent's doctype */
-  doctype: Doctype['name'] | 'Inherits' | 'Unknown';
+  engine: RenderingEngine['name'] | Unknown;
+  /**
+   * Doctype Support
+   *
+   * - `object`: See DoctypeSupport object.
+   * - `Unknown`: Zero idea. Likely because it has not been tested.
+   * - `None`: No doctype is used by the platform. Any doctype that you set will be ignored.
+   */
+  doctype?: DoctypeSupport | Unknown | 'None';
 };
 
 export type Client = {
@@ -49,7 +62,7 @@ export type Client = {
   /* Name of the developer */
   developer: Developer;
   /* List of supported protocols */
-  protocols: (Protocol | SecureProtocol)[] | 'Unknown';
+  protocols: (Protocol | SecureProtocol)[] | Unknown;
   /* List of supported platforms */
   platforms: Platform[];
   /* Optional links */
