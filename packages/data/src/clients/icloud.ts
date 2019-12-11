@@ -1,14 +1,16 @@
-import { Product } from './types';
+import { Client } from './types';
 
-export const icloud: Product = {
+export const icloud: Client = {
   name: 'iCloud',
-  clients: [
+  developer: 'Apple',
+  platforms: [
     {
       name: 'iCloud Webmail',
       description:
         "Apple's cloud storage and cloud computing service accessed through a web browser",
       kind: 'Webmail',
       engine: 'Contextual',
+      doctype: 'Unknown',
     },
     {
       name: 'iCloud Mail for Windows',
@@ -16,6 +18,7 @@ export const icloud: Product = {
         "Apple's cloud storage and cloud computing service for Windows",
       kind: 'Windows App',
       engine: 'WebKit',
+      doctype: 'Unknown',
     },
   ],
 };

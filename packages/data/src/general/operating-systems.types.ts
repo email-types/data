@@ -1,4 +1,5 @@
-import { DeveloperName } from '../types/common';
+import { Device } from './types';
+import { Developer } from './types';
 
 type Name =
   | 'Android'
@@ -13,5 +14,6 @@ type Name =
 export type OperatingSystem = {
   name: Name;
   description: string;
-  developer: DeveloperName | null;
+  developer: Developer | null;
+  devices: Device[];
 };

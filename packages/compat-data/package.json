@@ -1,15 +1,11 @@
 {
-  "name": "@email-types/data",
-  "version": "1.0.0-canary.3",
-  "description": "@email-types/data",
+  "name": "@email-types/compat-data",
+  "version": "1.0.0-canary.0",
+  "description": "@email-types/compat-data",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist",
-    "doctypes.d.ts",
-    "doctypes.js",
-    "mso.d.ts",
-    "mso.js"
+    "dist"
   ],
   "scripts": {
     "build": "babel --root-mode upward -x .ts,.tsx src -d dist",
@@ -18,11 +14,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "keywords": [
-    "data",
-    "emails",
-    "css"
-  ],
+  "dependencies": {
+    "@email-types/data": "1.0.0-canary.3"
+  },
   "author": "buames",
   "repository": "https://github.com/email-types/email-types/tree/master/packages/data",
   "license": "MIT"

@@ -1,13 +1,15 @@
-import { Product } from './types';
+import { Client } from './types';
 
-export const gmailImap: Product = {
+export const gmailImap: Client = {
   name: 'Gmail IMAP',
-  clients: [
+  developer: 'Google',
+  platforms: [
     {
       name: 'Gmail IMAP for Android',
       description: '',
       kind: 'Android Mobile App',
       engine: 'Blink',
+      doctype: 'Unknown',
     },
   ],
 };

@@ -1,83 +1,77 @@
-import { ClientType } from './client-types.types';
+import { Application } from './application.types';
 
-export const clientTypes: ClientType[] = [
-  {
-    name: 'Webmail',
-    kind: 'Webmail',
-    platforms: ['Desktop', 'Mobile', 'Tablet'],
-    os: 'Universal',
-  },
+export const platforms: Application[] = [
   {
     name: 'Mac App',
     kind: 'Application',
-    platforms: ['Desktop'],
+    devices: ['Desktop'],
     os: 'macOS',
   },
   {
     name: 'iOS App',
     kind: 'Application',
-    platforms: ['Mobile'],
+    devices: ['Mobile'],
     os: 'iOS',
   },
   {
     name: 'iPad App',
     kind: 'Application',
-    platforms: ['Tablet'],
+    devices: ['Tablet'],
     os: 'iPadOS',
   },
   {
     name: 'iWatch App',
     kind: 'Application',
-    platforms: ['Watch'],
+    devices: ['Watch'],
     os: 'watchOS',
   },
   {
     name: 'Android App',
     kind: 'Application',
-    platforms: ['Mobile', 'Tablet'],
+    devices: ['Mobile', 'Tablet'],
     os: 'Android',
   },
   {
     name: 'Android Tablet App',
     kind: 'Application',
-    platforms: ['Tablet'],
+    devices: ['Tablet'],
     os: 'Android',
   },
   {
     name: 'Android Mobile App',
     kind: 'Application',
-    platforms: ['Mobile'],
+    devices: ['Mobile'],
     os: 'Android',
   },
   {
     name: 'Windows App',
     kind: 'Application',
-    platforms: ['Desktop'],
+    devices: ['Desktop'],
     os: 'Windows',
   },
   {
     name: 'Windows Tablet App',
     kind: 'Application',
-    platforms: ['Tablet'],
+    devices: ['Tablet'],
     os: 'Windows',
   },
   {
     name: 'Windows Mobile App',
     kind: 'Application',
-    platforms: ['Mobile'],
+    devices: ['Mobile'],
     os: 'Windows',
   },
   {
     name: 'Linux App',
     kind: 'Application',
-    platforms: ['Desktop'],
+    devices: ['Desktop'],
     os: 'Linux',
   },
   // Generics
   {
     name: 'Mobile App',
     kind: 'Application',
-    platforms: ['Mobile'],
+    devices: ['Mobile'],
     os: 'Unknown',
   },
 ];

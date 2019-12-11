@@ -1,7 +1,11 @@
-import { Doctype } from '../misc/doctypes.types';
-import { RenderingEngine } from '../misc/rendering-engines.types';
-import { ClientType } from '../misc/client-types.types';
-import { Link } from '../types/common';
+import {
+  Doctype,
+  Developer,
+  RenderingEngine,
+  Application,
+  Webmail,
+  Link,
+} from '..';
 
 /**
  * Email Client Names
@@ -28,18 +32,22 @@ export type Name =
   | 'Windows Mail'
   | 'Yahoo Mail';
 
-type Client = {
+type Platform = {
+  /* Name of the platform */
   name: string;
+  /* Description of the platform */
   description?: string;
-  kind: ClientType['name'];
+  /* Kind of platform */
+  kind: Application['name'] | Webmail['name'];
   /* Rendering Engine (defines css prefix) */
   engine: RenderingEngine['name'] | 'Unknown';
   /* Doctype that this email uses, regardless of what you define */
-  doctype?: Doctype['name'];
+  doctype?: Doctype['name'] | 'Unknown';
 };
 
-export type Product = {
+export type Client = {
   name: Name;
+  developer: Developer;
   links?: Readonly<Link>[];
-  clients: Client[];
+  platforms: Platform[];
 };

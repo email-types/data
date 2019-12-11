@@ -23,7 +23,6 @@ export const command: Command = async (argv) => {
   try {
     const [developers, doctypes] = await Promise.all([
       interopt('../validations/developers'),
-      interopt('../validations/doctypes'),
     ]);
 
     const results = { developers, doctypes };

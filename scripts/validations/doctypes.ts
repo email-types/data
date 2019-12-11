@@ -1,6 +1,6 @@
 import { resolve } from 'path';
 import { outputJson } from 'fs-extra';
-import { doctypes } from '../../packages/data/dist/misc/doctypes';
+import { doctypes } from '../../packages/data/dist/html/doctypes';
 
 type Result = { result: number };
 

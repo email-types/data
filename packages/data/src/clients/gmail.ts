@@ -1,31 +1,36 @@
-import { Product } from './types';
+import { Client } from './types';
 
-export const gmail: Product = {
+export const gmail: Client = {
   name: 'Gmail',
-  clients: [
+  developer: 'Google',
+  platforms: [
     {
       name: 'Gmail for Desktop, Mobile, and Tablet Webmail',
       description: '',
       kind: 'Webmail',
       engine: 'Contextual',
+      doctype: 'Unknown',
     },
     {
       name: 'Gmail for iOS',
       description: '',
       kind: 'iOS App',
       engine: 'WebKit',
+      doctype: 'Unknown',
     },
     {
       name: 'Gmail for iPadOS',
       description: '',
       kind: 'iPad App',
       engine: 'WebKit',
+      doctype: 'Unknown',
     },
     {
       name: 'Gmail for Android',
       description: '',
       kind: 'Android App',
       engine: 'Blink',
+      doctype: 'Unknown',
     },
   ],
 };

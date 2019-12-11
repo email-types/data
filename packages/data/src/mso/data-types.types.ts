@@ -1,4 +1,4 @@
-import { Link } from '../types/common';
+import { Link } from '../common';
 
 export type DataType = {
   syntax: string;

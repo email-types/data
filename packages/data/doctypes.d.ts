@@ -1,1 +1,1 @@
-export * from './dist/misc/doctypes';
+export * from './dist/html/doctypes';

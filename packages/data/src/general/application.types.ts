@@ -1,3 +1,4 @@
+import { Device, Kind } from './types';
 import { OperatingSystem } from './operating-systems.types';
 
 type Name =
@@ -10,28 +11,13 @@ type Name =
   | 'Linux App'
   | 'Mac App'
   | 'Mobile App'
-  | 'Webmail'
   | 'Windows App'
   | 'Windows Tablet App'
   | 'Windows Mobile App';
 
-/**
- * Email Client Kinds
- *
- * */
-type Kind = 'Application' | 'Webmail';
-
-/**
- * Device Types
- *
- * */
-type Platform = 'Desktop' | 'Mobile' | 'Tablet' | 'Watch';
-
-export type ClientType = {
-  name: Name;
+export type Application = {
   kind: Kind;
-  /* device (defines compat 'target') */
-  platforms: Platform[];
-  /* Operating System (defines compat 'target') */
+  name: Name;
+  devices: Device[];
   os: OperatingSystem['name'] | 'Unknown';
 };

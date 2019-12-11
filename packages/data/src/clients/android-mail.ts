@@ -1,13 +1,15 @@
-import { Product } from './types';
+import { Client } from './types';
 
-export const androidMail: Product = {
+export const androidMail: Client = {
   name: 'Android Mail',
-  clients: [
+  developer: 'Google',
+  platforms: [
     {
       name: 'Android Mail',
       description: '',
       kind: 'Android Mobile App',
       engine: 'Blink',
+      doctype: 'Unknown',
     },
   ],
 };

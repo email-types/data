@@ -1,7 +1,8 @@
-import { Product } from './types';
+import { Client } from './types';
 
-export const samsungMail: Product = {
+export const samsungMail: Client = {
   name: 'Samsung Mail',
+  developer: 'Samsung',
   links: [
     {
       title: 'Litmus Blog Post',
@@ -9,12 +10,13 @@ export const samsungMail: Product = {
         'https://litmus.com/blog/samsung-now-available-in-litmus-email-previews',
     },
   ],
-  clients: [
+  platforms: [
     {
       name: 'Samsung Mail for Android',
       description: "Samsung's native email app for Android devices.",
       kind: 'Mobile App',
       engine: 'Unknown',
+      doctype: 'Unknown',
     },
   ],
 };

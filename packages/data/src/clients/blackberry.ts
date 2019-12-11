@@ -1,13 +1,15 @@
-import { Product } from './types';
+import { Client } from './types';
 
-export const blackberry: Product = {
+export const blackberry: Client = {
   name: 'Blackberry Mail',
-  clients: [
+  developer: 'ITC',
+  platforms: [
     {
       name: 'Blackberry Mail',
       description: "BlackBerry's default email client.",
       kind: 'Mobile App',
       engine: 'Unknown',
+      doctype: 'Unknown',
     },
   ],
 };

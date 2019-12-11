@@ -1,7 +1,7 @@
-import { DeveloperName } from '../types/common';
+import { Developer } from './types';
 
 /**
- * Render Engine
+ * Rendering Engine
  *
  * @see https://en.m.wikipedia.org/wiki/Comparison_of_browser_engines
  * */
@@ -24,6 +24,6 @@ type VendorPrefix = 'Moz' | 'Ms' | 'Mso' | 'WebKit';
 export type RenderingEngine = {
   name: Name;
   description: string;
-  developer: DeveloperName | null;
+  developer: Developer | null;
   prefix: VendorPrefix | VendorPrefix[];
 };
