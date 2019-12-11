@@ -1,51 +1,65 @@
-import { EmailClient } from './types';
+import { Product } from './types';
 
-export const aolMail: EmailClient = {
+export const aolMail: Product = {
   name: 'Aol Mail',
-  description: '',
   links: [
     { title: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/AOL_Mail' },
   ],
-  platforms: [
+  clients: [
     {
+      name: 'AOL Webmail',
+      description:
+        "AOL's webmail service, which can be accessed through a web browser.",
       kind: 'Webmail',
-      devices: ['Desktop', 'Mobile', 'Tablet'],
+      platforms: ['Desktop', 'Mobile', 'Tablet'],
       os: 'Universal',
       engine: 'Blink',
     },
     {
+      name: 'AOL Mail for Windows',
+      description: "AOL's built in email client for Windows.",
       kind: 'Application',
-      devices: ['Desktop'],
+      platforms: ['Desktop'],
       os: 'Windows',
       engine: 'Trident',
     },
     {
+      name: 'AOL Mail for macOS',
+      description: "AOL's built in email client for macOS.",
       kind: 'Application',
-      devices: ['Desktop'],
+      platforms: ['Desktop'],
       os: 'macOS',
       engine: 'WebKit',
     },
     {
+      name: 'AOL Mail for Android',
+      description: "AOL's email app for Android devices.",
       kind: 'Application',
-      devices: ['Mobile', 'Tablet'],
+      platforms: ['Mobile', 'Tablet'],
       os: 'Android',
       engine: 'Blink',
     },
     {
+      name: 'AOL Mail for iOS',
+      description: "AOL's email app for iOS devices.",
       kind: 'Application',
-      devices: ['Mobile'],
+      platforms: ['Mobile'],
       os: 'iOS',
       engine: 'WebKit',
     },
     {
+      name: 'AOL Mail for iPadOS',
+      description: "AOL's email app for iPadOS devices.",
       kind: 'Application',
-      devices: ['Tablet'],
+      platforms: ['Tablet'],
       os: 'iPadOS',
       engine: 'WebKit',
     },
     {
+      name: 'AOL Mail for watchOS',
+      description: "AOL's email app for watchOS devices.",
       kind: 'Application',
-      devices: ['Watch'],
+      platforms: ['Watch'],
       os: 'watchOS',
       engine: 'WebKit',
     },

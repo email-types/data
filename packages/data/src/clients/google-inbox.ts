@@ -1,29 +1,37 @@
-import { EmailClient } from './types';
+import { Product } from './types';
 
-export const googleInbox: EmailClient = {
+export const googleInbox: Product = {
   name: 'Google Inbox',
-  platforms: [
+  clients: [
     {
+      name: 'Google Inbox for Desktop, Mobile, and Tablet Webmail',
+      description: '',
       kind: 'Webmail',
-      devices: ['Desktop', 'Mobile', 'Tablet'],
+      platforms: ['Desktop', 'Mobile', 'Tablet'],
       os: 'Universal',
       engine: 'Contextual',
     },
     {
+      name: 'Google Inbox for iOS',
+      description: '',
       kind: 'Application',
-      devices: ['Mobile'],
+      platforms: ['Mobile'],
       os: 'iOS',
       engine: 'WebKit',
     },
     {
+      name: 'Google Inbox for iPadOS',
+      description: '',
       kind: 'Application',
-      devices: ['Tablet'],
+      platforms: ['Tablet'],
       os: 'iPadOS',
       engine: 'WebKit',
     },
     {
+      name: 'Google Inbox for Android',
+      description: '',
       kind: 'Application',
-      devices: ['Mobile', 'Tablet'],
+      platforms: ['Mobile', 'Tablet'],
       os: 'Android',
       engine: 'Blink',
     },

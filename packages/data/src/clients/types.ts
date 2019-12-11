@@ -12,7 +12,7 @@ export type Kind = 'Application' | 'Webmail';
  * Device Types
  *
  * */
-export type Device = 'Desktop' | 'Mobile' | 'Tablet' | 'Watch';
+export type Platforms = 'Desktop' | 'Mobile' | 'Tablet' | 'Watch';
 
 /**
  * Operating Systems
@@ -32,13 +32,15 @@ export type OperatingSystem =
  * Email Client Names
  *
  * @see https://en.wikipedia.org/wiki/Comparison_of_email_clients
+ * @see https://en.wikipedia.org/wiki/Comparison_of_webmail_providers
  * */
 export type Name =
   | 'Android Mail'
   | 'Apple Mail'
   | 'Aol Mail'
-  | 'Blackberry'
+  | 'Blackberry Mail'
   | 'Gmail'
+  | 'Gmail IMAP'
   | 'Google Inbox'
   | 'G Suite'
   | 'iCloud'
@@ -48,14 +50,15 @@ export type Name =
   | 'Postbox'
   | 'Samsung Mail'
   | 'Thunderbird'
-  | 'Windows 10 Mail'
-  | 'Windows Phone 8 Mail'
+  | 'Windows Mail'
   | 'Yahoo Mail';
 
-type Platform = {
+type Client = {
+  name: string;
+  description?: string;
   kind: Kind;
   /* device (defines compat 'target') */
-  devices: Device[];
+  platforms: Platforms[];
   /* Operating System (defines compat 'target') */
   os: OperatingSystem;
   /* Rendering Engine (defines css prefix) */
@@ -64,9 +67,8 @@ type Platform = {
   doctype?: DoctypeName;
 };
 
-export type EmailClient = {
+export type Product = {
   name: Name;
-  description?: string;
   links?: Readonly<Link>[];
-  platforms: Platform[];
+  clients: Client[];
 };

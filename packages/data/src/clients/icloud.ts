@@ -1,19 +1,24 @@
-import { EmailClient } from './types';
+import { Product } from './types';
 
-export const icloud: EmailClient = {
+export const icloud: Product = {
   name: 'iCloud',
-  description: '',
   links: [],
-  platforms: [
+  clients: [
     {
+      name: 'iCloud Webmail',
+      description:
+        "Apple's cloud storage and cloud computing service accessed through a web browser",
       kind: 'Webmail',
-      devices: ['Desktop', 'Mobile', 'Tablet'],
+      platforms: ['Desktop', 'Mobile', 'Tablet'],
       os: 'Universal',
       engine: 'Contextual',
     },
     {
+      name: 'iCloud Mail for Windows',
+      description:
+        "Apple's cloud storage and cloud computing service for Windows",
       kind: 'Application',
-      devices: ['Desktop'],
+      platforms: ['Desktop'],
       os: 'Windows',
       engine: 'WebKit',
     },

@@ -1,25 +1,30 @@
-import { EmailClient } from './types';
+import { Product } from './types';
 
-export const thunderbird: EmailClient = {
+export const thunderbird: Product = {
   name: 'Thunderbird',
-  description: '',
   links: [],
-  platforms: [
+  clients: [
     {
+      name: 'Thunderbird for macOS',
+      description: '',
       kind: 'Application',
-      devices: ['Desktop'],
+      platforms: ['Desktop'],
       os: 'macOS',
       engine: 'Gecko',
     },
     {
+      name: 'Thunderbird for Windows',
+      description: '',
       kind: 'Application',
-      devices: ['Desktop'],
+      platforms: ['Desktop'],
       os: 'Windows',
       engine: 'Gecko',
     },
     {
+      name: 'Thunderbird for Linux',
+      description: '',
       kind: 'Application',
-      devices: ['Desktop'],
+      platforms: ['Desktop'],
       os: 'Linux',
       engine: 'Gecko',
     },
