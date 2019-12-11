@@ -1,5 +1,4 @@
-import { Name as EmailClientName } from './email-clients.types';
-import { Name as OperatingSystemName } from './operating-systems.types';
+import { Name as EmailClientName, OperatingSystem } from '../clients/types';
 import { Name as RenderingEngineName } from './rendering-engines.types';
 
 type Name =
@@ -16,7 +15,7 @@ export type Developer = {
   description?: string;
   clients: EmailClientName[];
   engines?: RenderingEngineName[] | null;
-  os?: OperatingSystemName[] | null;
+  os?: OperatingSystem[] | null;
 };
 
 export type Developers = Developer[];

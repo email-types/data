@@ -9,7 +9,7 @@ export const developers: Developers = [
   },
   {
     name: 'Google',
-    clients: ['Android Mail', 'Gmail', 'Gmail IMAP', 'Google Inbox', 'G Suit'],
+    clients: ['Android Mail', 'Gmail', 'Google Inbox', 'G Suite'],
     engines: ['Blink'],
     os: ['Android'],
   },
@@ -21,7 +21,12 @@ export const developers: Developers = [
   },
   {
     name: 'Microsoft',
-    clients: ['Outlook', 'Windows 10 Mail', 'Windows Phone 8 Mail'],
+    clients: [
+      'Outlook',
+      'Outlook Express',
+      'Windows 10 Mail',
+      'Windows Phone 8 Mail',
+    ],
     engines: ['MsWord', 'Trident'],
     os: ['Windows'],
   },
