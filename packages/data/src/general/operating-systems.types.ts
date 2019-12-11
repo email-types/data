@@ -1,5 +1,5 @@
-import { Device } from './types';
-import { Developer } from './types';
+import { Device } from './features.types';
+import { Developer } from './features.types';
 
 type Name =
   | 'Android'

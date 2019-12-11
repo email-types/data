@@ -1,4 +1,4 @@
-import { Client } from './types';
+import { Client } from '../general/client.types';
 
 export const appleMail: Client = {
   name: 'Apple Mail',

@@ -1,4 +1,4 @@
-import { Developer } from './types';
+import { Developer } from './features.types';
 
 /**
  * Rendering Engine

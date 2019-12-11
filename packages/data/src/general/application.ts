@@ -1,6 +1,6 @@
 import { Application } from './application.types';
 
-export const platforms: Application[] = [
+export const application: Application[] = [
   {
     name: 'Mac App',
     kind: 'Application',

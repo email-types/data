@@ -1,4 +1,4 @@
-import { Client } from './types';
+import { Client } from '../general/client.types';
 
 export const googleInbox: Client = {
   name: 'Google Inbox',

@@ -44,7 +44,7 @@ export const renderingEngines: RenderingEngine[] = [
   {
     name: 'Contextual',
     description:
-      "The rendering engine is contextual to the brower being used when viewing Webmail. The `mso` vendor prefix is not included as its only applies to Microsoft Office Outlook versions rendered using Microsoft Word's rendering engine.",
+      "The rendering engine is contextual to the broswer being used when viewing Webmail. The `mso` vendor prefix is not included as its only applies to Microsoft Office Outlook versions rendered using Microsoft Word's rendering engine.",
     developer: null,
     prefix: ['Moz', 'Ms', 'WebKit'],
   },

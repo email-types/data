@@ -1,4 +1,4 @@
-import { Client } from './types';
+import { Client } from '../general/client.types';
 
 export const windowsMail: Client = {
   name: 'Windows Mail',

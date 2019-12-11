@@ -1,4 +1,4 @@
-import { Client } from './types';
+import { Client } from '../general/client.types';
 
 export const gmailImap: Client = {
   name: 'Gmail IMAP',

@@ -1,4 +1,4 @@
-import { Device, Kind } from './types';
+import { Device, Kind } from './features.types';
 import { OperatingSystem } from './operating-systems.types';
 
 type Name =
