@@ -6,9 +6,7 @@ export const blackberry: Product = {
     {
       name: 'Blackberry Mail',
       description: "BlackBerry's default email client.",
-      kind: 'Application',
-      platforms: ['Mobile'],
-      os: 'Unknown',
+      kind: 'Mobile App',
       engine: 'Unknown',
     },
   ],

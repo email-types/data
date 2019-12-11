@@ -1,28 +1,29 @@
+import { DeveloperName } from '../types/common';
+
 /**
  * Render Engine
  *
  * @see https://en.m.wikipedia.org/wiki/Comparison_of_browser_engines
  * */
-export type Name =
+type Name =
   | 'Blink'
+  | 'EdgeHTML'
   | 'Gecko'
   | 'MsWord'
   | 'Trident'
   | 'WebKit'
-  | 'Contextual'
-  | 'Unknown';
+  | 'Contextual';
 
 /**
  * CSS (Vendor) Prefix
  *
  * @see https://en.m.wikipedia.org/wiki/Comparison_of_browser_engines_(CSS_support)#Vendor-specific
  * */
-export type VendorPrefix = 'Moz' | 'Ms' | 'Mso' | 'WebKit' | 'Unknown';
+type VendorPrefix = 'Moz' | 'Ms' | 'Mso' | 'WebKit';
 
 export type RenderingEngine = {
   name: Name;
-  description?: string;
+  description: string;
+  developer: DeveloperName | null;
   prefix: VendorPrefix | VendorPrefix[];
 };
-
-export type RenderingEngines = RenderingEngine[];

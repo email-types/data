@@ -1,4 +1,4 @@
-export type Name =
+type Name =
   | 'HTML 5'
   | 'HTML 4.01 Strict'
   | 'HTML 4.01 Transitional'
@@ -18,5 +18,3 @@ export type Doctype = {
   publicIdentifier: string | null;
   systemIdentifier: string | null;
 };
-
-export type Doctypes = Doctype[];

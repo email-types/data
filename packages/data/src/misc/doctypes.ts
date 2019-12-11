@@ -1,6 +1,6 @@
-import { Doctypes } from './doctypes.types';
+import { Doctype } from './doctypes.types';
 
-export const doctypes: Doctypes = [
+export const doctypes: Doctype[] = [
   {
     name: 'HTML 5',
     description:

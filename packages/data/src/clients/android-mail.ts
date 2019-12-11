@@ -6,9 +6,7 @@ export const androidMail: Product = {
     {
       name: 'Android Mail',
       description: '',
-      kind: 'Application',
-      platforms: ['Mobile'],
-      os: 'Android',
+      kind: 'Android Mobile App',
       engine: 'Blink',
     },
   ],

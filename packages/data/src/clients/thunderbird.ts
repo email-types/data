@@ -2,30 +2,23 @@ import { Product } from './types';
 
 export const thunderbird: Product = {
   name: 'Thunderbird',
-  links: [],
   clients: [
     {
       name: 'Thunderbird for macOS',
       description: '',
-      kind: 'Application',
-      platforms: ['Desktop'],
-      os: 'macOS',
+      kind: 'Mac App',
       engine: 'Gecko',
     },
     {
       name: 'Thunderbird for Windows',
       description: '',
-      kind: 'Application',
-      platforms: ['Desktop'],
-      os: 'Windows',
+      kind: 'Windows App',
       engine: 'Gecko',
     },
     {
       name: 'Thunderbird for Linux',
       description: '',
-      kind: 'Application',
-      platforms: ['Desktop'],
-      os: 'Linux',
+      kind: 'Linux App',
       engine: 'Gecko',
     },
   ],

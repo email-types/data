@@ -13,9 +13,7 @@ export const samsungMail: Product = {
     {
       name: 'Samsung Mail for Android',
       description: "Samsung's native email app for Android devices.",
-      kind: 'Application',
-      platforms: ['Mobile'],
-      os: 'Unknown',
+      kind: 'Mobile App',
       engine: 'Unknown',
     },
   ],
