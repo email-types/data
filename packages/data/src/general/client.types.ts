@@ -49,7 +49,7 @@ type Platform = {
   /**
    * Doctype Support
    *
-   * - `object`: See DoctypeSupport object.
+   * - `object`: See DoctypeSupport type.
    * - `Unknown`: Zero idea. Likely because it has not been tested.
    * - `None`: No doctype is used by the platform. Any doctype that you set will be ignored.
    */
