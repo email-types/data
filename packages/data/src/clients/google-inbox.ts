@@ -3,6 +3,7 @@ import { Client } from '../general/client.types';
 export const googleInbox: Client = {
   name: 'Google Inbox',
   developer: 'Google',
+  protocols: [],
   platforms: [
     {
       name: 'Google Inbox for Desktop, Mobile, and Tablet Webmail',

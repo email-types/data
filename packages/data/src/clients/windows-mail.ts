@@ -3,6 +3,7 @@ import { Client } from '../general/client.types';
 export const windowsMail: Client = {
   name: 'Windows Mail',
   developer: 'Microsoft',
+  protocols: [],
   platforms: [
     {
       name: 'Windows Live Mail',

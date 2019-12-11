@@ -3,6 +3,7 @@ import { Client } from '../general/client.types';
 export const outlookExpress: Client = {
   name: 'Outlook Express',
   developer: 'Microsoft',
+  protocols: [],
   platforms: [
     {
       name: 'Outlook Express for Windows',

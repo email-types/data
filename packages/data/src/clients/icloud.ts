@@ -3,6 +3,7 @@ import { Client } from '../general/client.types';
 export const icloud: Client = {
   name: 'iCloud',
   developer: 'Apple',
+  protocols: [],
   platforms: [
     {
       name: 'iCloud Webmail',

@@ -13,15 +13,15 @@ import { Link } from '../common';
  * */
 type Name =
   | 'Android Mail'
-  | 'Apple Mail'
   | 'Aol Mail'
+  | 'Apple Mail'
   | 'Blackberry Mail'
+  | 'G Suite'
   | 'Gmail'
   | 'Gmail IMAP'
   | 'Google Inbox'
-  | 'G Suite'
-  | 'iCloud'
   | 'IBM Notes'
+  | 'iCloud'
   | 'Outlook'
   | 'Outlook Express'
   | 'Postbox'
@@ -39,15 +39,19 @@ type Platform = {
   kind: Application['name'] | Webmail['name'];
   /* Rendering Engine (defines css prefix) */
   engine: RenderingEngine['name'] | 'Unknown';
-  /* Doctype that this platform uses, regardless of what you define */
-  doctype?: Doctype['name'] | 'Unknown';
-  /* Protocols that this platform uses */
-  protocols?: (Protocol | SecureProtocol)[] | 'Unknown';
+  /* Doctype that this platform uses, regardless of what you define. When set to `Inherits`, the doctype uses it's parent's doctype */
+  doctype: Doctype['name'] | 'Inherits' | 'Unknown';
 };
 
 export type Client = {
+  /* Name of the email client */
   name: Name;
+  /* Name of the developer */
   developer: Developer;
-  links?: Readonly<Link>[];
+  /* List of supported protocols */
+  protocols: (Protocol | SecureProtocol)[] | 'Unknown';
+  /* List of supported platforms */
   platforms: Platform[];
+  /* Optional links */
+  links?: Readonly<Link>[];
 };

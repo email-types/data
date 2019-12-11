@@ -3,6 +3,7 @@ import { Client } from '../general/client.types';
 export const gmail: Client = {
   name: 'Gmail',
   developer: 'Google',
+  protocols: [],
   platforms: [
     {
       name: 'Gmail for Desktop, Mobile, and Tablet Webmail',

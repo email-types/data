@@ -3,6 +3,7 @@ import { Client } from '../general/client.types';
 export const blackberry: Client = {
   name: 'Blackberry Mail',
   developer: 'ITC',
+  protocols: [],
   platforms: [
     {
       name: 'Blackberry Mail',

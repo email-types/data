@@ -3,6 +3,7 @@ import { Client } from '../general/client.types';
 export const outlook: Client = {
   name: 'Outlook',
   developer: 'Microsoft',
+  protocols: [],
   platforms: [
     {
       name: 'Outlook 2000-2003',

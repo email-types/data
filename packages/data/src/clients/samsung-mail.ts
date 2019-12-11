@@ -3,6 +3,7 @@ import { Client } from '../general/client.types';
 export const samsungMail: Client = {
   name: 'Samsung Mail',
   developer: 'Samsung',
+  protocols: [],
   links: [
     {
       title: 'Litmus Blog Post',

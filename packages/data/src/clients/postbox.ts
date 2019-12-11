@@ -3,6 +3,7 @@ import { Client } from '../general/client.types';
 export const postbox: Client = {
   name: 'Postbox',
   developer: 'Postbox',
+  protocols: [],
   platforms: [
     {
       name: 'Postbox for macOS',

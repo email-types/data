@@ -3,6 +3,7 @@ import { Client } from '../general/client.types';
 export const ibmNotes: Client = {
   name: 'IBM Notes',
   developer: 'IBM',
+  protocols: [],
   links: [
     {
       title: 'IBM.com',

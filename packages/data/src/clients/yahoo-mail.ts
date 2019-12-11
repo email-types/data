@@ -3,6 +3,7 @@ import { Client } from '../general/client.types';
 export const yahooMail: Client = {
   name: 'Yahoo Mail',
   developer: 'Verizon',
+  protocols: [],
   platforms: [
     {
       name: 'Yahoo Mail',

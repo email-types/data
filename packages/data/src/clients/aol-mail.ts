@@ -3,6 +3,7 @@ import { Client } from '../general/client.types';
 export const aolMail: Client = {
   name: 'Aol Mail',
   developer: 'Verizon',
+  protocols: ['POP3', 'IMAP4', 'SMPT', 'SSL'],
   links: [
     { title: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/AOL_Mail' },
   ],

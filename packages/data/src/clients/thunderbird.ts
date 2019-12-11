@@ -3,6 +3,7 @@ import { Client } from '../general/client.types';
 export const thunderbird: Client = {
   name: 'Thunderbird',
   developer: 'Mozilla',
+  protocols: [],
   platforms: [
     {
       name: 'Thunderbird for macOS',

@@ -3,6 +3,7 @@ import { Client } from '../general/client.types';
 export const appleMail: Client = {
   name: 'Apple Mail',
   developer: 'Apple',
+  protocols: [],
   links: [],
   platforms: [
     {
