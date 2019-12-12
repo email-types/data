@@ -1,4 +1,5 @@
 import { Developer } from './features.types';
+import { Nullable, Description } from '../common';
 
 /**
  * Rendering Engine
@@ -21,9 +22,9 @@ type Name =
  * */
 type VendorPrefix = 'Moz' | 'Ms' | 'Mso' | 'WebKit';
 
-export type RenderingEngine = {
+export interface RenderingEngine {
   name: Name;
-  description: string;
-  developer: Developer | null;
+  description?: Description;
+  developer: Nullable<Developer>;
   prefix: VendorPrefix | VendorPrefix[];
-};
+}

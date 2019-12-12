@@ -10,14 +10,14 @@ export const postbox: Client = {
       description: 'A popular commercial email client for macOS.',
       kind: 'Mac App',
       engine: 'Gecko',
-      doctype: 'Unknown',
+      doctype: { preset: 'Unsure', supports: 'Unsure' },
     },
     {
       name: 'Postbox for Windows',
       description: 'A popular commercial email client for Windows.',
       kind: 'Windows App',
       engine: 'Gecko',
-      doctype: 'Unknown',
+      doctype: { preset: 'Unsure', supports: 'Unsure' },
     },
   ],
 };

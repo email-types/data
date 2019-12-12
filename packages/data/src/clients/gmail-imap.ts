@@ -10,7 +10,7 @@ export const gmailImap: Client = {
       description: '',
       kind: 'Android Mobile App',
       engine: 'Blink',
-      doctype: 'Unknown',
+      doctype: { preset: 'Unsure', supports: 'Unsure' },
     },
   ],
 };

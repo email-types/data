@@ -2,7 +2,7 @@ import { Application } from './application.types';
 import { Developer, Protocol, SecureProtocol } from './features.types';
 import { RenderingEngine } from './rendering-engines.types';
 import { Webmail } from './webmail.types';
-import { Link, Unknown } from '../common';
+import { Links, $Ref, UnsureOrType, Description } from '../common';
 import { Doctype } from '../html';
 
 /**
@@ -30,41 +30,33 @@ type Name =
   | 'Windows Mail'
   | 'Yahoo Mail';
 
-type DoctypeSupport = {
-  /* The doctype used by the platform when no doctype is set. When set to `None`, no doctype will be used unless you set one. */
-  preset: Doctype['name'] | 'None';
-  /* The supported doctype or a list of supported doctypes. When set to `None`, any doctype that you set will be ignored. */
-  supports: Doctype['name'] | Doctype['name'][] | 'None';
-};
-
 type Platform = {
   /* Name of the platform */
   name: string;
   /* About of the platform */
-  description?: string;
+  description?: Description;
   /* Kind of platform */
-  kind: Application['name'] | Webmail['name'];
+  kind: $Ref<Application | Webmail>;
   /* Rendering Engine (defines css prefix) */
-  engine: RenderingEngine['name'] | Unknown;
-  /**
-   * Doctype Support
-   *
-   * - `object`: See DoctypeSupport type.
-   * - `Unknown`: Zero idea. Likely because it has not been tested.
-   * - `None`: No doctype is used by the platform. Any doctype that you set will be ignored.
-   */
-  doctype?: DoctypeSupport | Unknown | 'None';
+  engine: UnsureOrType<$Ref<RenderingEngine>>;
+  /* Doctype support of the platform */
+  doctype?: {
+    /* The doctype used by the platform when no doctype is set. When set to `None`, no doctype will be used unless you set one. */
+    preset: UnsureOrType<$Ref<Doctype> | 'None'>;
+    /* A list of supported doctypes. When set to `None`, any doctype that you set will be ignored. */
+    supports: UnsureOrType<$Ref<Doctype>[] | 'None'>;
+  };
 };
 
-export type Client = {
+export interface Client {
   /* Name of the email client */
   name: Name;
   /* Name of the developer */
   developer: Developer;
   /* List of supported protocols */
-  protocols: (Protocol | SecureProtocol)[] | Unknown;
+  protocols: UnsureOrType<(Protocol | SecureProtocol)[]>;
   /* List of supported platforms */
   platforms: Platform[];
   /* Optional links */
-  links?: Readonly<Link>[];
-};
+  links?: Links;
+}

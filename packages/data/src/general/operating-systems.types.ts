@@ -1,5 +1,6 @@
 import { Device } from './features.types';
 import { Developer } from './features.types';
+import { Nullable, Description } from '../common';
 
 type Name =
   | 'Android'
@@ -11,9 +12,9 @@ type Name =
   | 'Windows'
   | 'Universal';
 
-export type OperatingSystem = {
+export interface OperatingSystem {
   name: Name;
-  description: string;
-  developer: Developer | null;
+  description?: Description;
+  developer: Nullable<Developer>;
   devices: Device[];
-};
+}

@@ -1,5 +1,6 @@
 import { Device, Kind } from './features.types';
 import { OperatingSystem } from './operating-systems.types';
+import { UnsureOrType, $Ref } from '../common';
 
 type Name =
   | 'Android App'
@@ -15,9 +16,9 @@ type Name =
   | 'Windows Tablet App'
   | 'Windows Mobile App';
 
-export type Application = {
+export interface Application {
   kind: Kind;
   name: Name;
   devices: Device[];
-  os: OperatingSystem['name'] | 'Unknown';
-};
+  os: UnsureOrType<$Ref<OperatingSystem>>;
+}

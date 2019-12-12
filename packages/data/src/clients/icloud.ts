@@ -11,7 +11,7 @@ export const icloud: Client = {
         "Apple's cloud storage and cloud computing service accessed through a web browser",
       kind: 'Webmail',
       engine: 'Contextual',
-      doctype: 'Unknown',
+      doctype: { preset: 'Unsure', supports: 'Unsure' },
     },
     {
       name: 'iCloud Mail for Windows',
@@ -19,7 +19,7 @@ export const icloud: Client = {
         "Apple's cloud storage and cloud computing service for Windows",
       kind: 'Windows App',
       engine: 'WebKit',
-      doctype: 'Unknown',
+      doctype: { preset: 'Unsure', supports: 'Unsure' },
     },
   ],
 };

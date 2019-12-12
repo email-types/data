@@ -10,7 +10,7 @@ export const gSuite: Client = {
       description: '',
       kind: 'Webmail',
       engine: 'Contextual',
-      doctype: 'Unknown',
+      doctype: { preset: 'Unsure', supports: 'Unsure' },
     },
   ],
 };

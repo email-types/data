@@ -72,6 +72,6 @@ export const application: Application[] = [
     name: 'Mobile App',
     kind: 'Application',
     devices: ['Mobile'],
-    os: 'Unknown',
+    os: 'Unsure',
   },
 ];

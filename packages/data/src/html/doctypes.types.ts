@@ -1,3 +1,5 @@
+import { Nullable, Description } from '../common';
+
 type Name =
   | 'HTML 5'
   | 'HTML 4.01 Strict'
@@ -12,9 +14,9 @@ type Keyword = 'public' | 'system';
 
 export type Doctype = {
   name: Name;
-  description?: string;
+  description?: Description;
   element: Element;
-  keyword: Keyword | null;
-  publicIdentifier: string | null;
-  systemIdentifier: string | null;
+  keyword: Nullable<Keyword>;
+  publicIdentifier: Nullable<string>;
+  systemIdentifier: Nullable<string>;
 };

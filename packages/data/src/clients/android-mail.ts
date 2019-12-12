@@ -10,7 +10,10 @@ export const androidMail: Client = {
       description: '',
       kind: 'Android Mobile App',
       engine: 'Blink',
-      doctype: 'Unknown',
+      doctype: {
+        preset: 'Unsure',
+        supports: 'Unsure',
+      },
     },
   ],
 };

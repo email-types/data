@@ -1,9 +1,9 @@
-import { Link } from '../common';
+import { Links, Description } from '../common';
 
 export type Operator = {
   syntax: string;
-  description?: string;
-  links?: Readonly<Link>[];
+  description?: Description;
+  links?: Links;
 };
 
 export type Operators = Record<string, Operator>;

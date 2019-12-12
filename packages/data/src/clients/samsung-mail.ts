@@ -16,8 +16,8 @@ export const samsungMail: Client = {
       name: 'Samsung Mail for Android',
       description: "Samsung's native email app for Android devices.",
       kind: 'Mobile App',
-      engine: 'Unknown',
-      doctype: 'Unknown',
+      engine: 'Unsure',
+      doctype: { preset: 'Unsure', supports: 'Unsure' },
     },
   ],
 };

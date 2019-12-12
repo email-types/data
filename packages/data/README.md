@@ -58,3 +58,27 @@ values that can be used by MSO properties.
 
 MSO version vectors that map to specific Outlook clients. This is commonly used
 to target specific versions of Outlook with conditional comments.
+
+### Notes
+
+**Key, Value References**
+
+Any key, value that uses the `$Ref<T>` type is referencing a key of a different
+`interface` or `type`, unless the value is set to `Unsure`, `None`, `null`, or
+`undefined`.
+
+For example:
+
+```ts
+interface Foo {
+  name: 'Beep' | 'Bop';
+}
+
+interface Bar {
+  boop: $Ref<Foo>;
+}
+
+const bar: Bar = {
+  boop: 'Bep',
+};
+```

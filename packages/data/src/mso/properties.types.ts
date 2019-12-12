@@ -1,9 +1,10 @@
 import { Groups } from './groups';
+import { Nullable, Description } from '../common';
 
 export type Property = {
   syntax: string;
-  description?: string;
-  initial: string | number | null;
+  description?: Description;
+  initial: Nullable<string | number>;
   inherited: boolean;
   shorthand: boolean;
   groups?: Groups[];

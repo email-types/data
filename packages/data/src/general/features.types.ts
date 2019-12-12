@@ -1,3 +1,6 @@
+/**
+ * Names of developers
+ * */
 export type Developer =
   | 'Apple'
   | 'Google'
@@ -9,12 +12,18 @@ export type Developer =
   | 'Samsung'
   | 'Verizon';
 
+/**
+ * Devices Types
+ * */
 export type Device = 'Desktop' | 'Mobile' | 'Tablet' | 'Watch';
 
+/**
+ * Kind of Platform
+ * */
 export type Kind = 'Application' | 'Webmail';
 
 /**
- * Protocols
+ * Protocols used by a Platform
  *
  * @see https://en.m.wikipedia.org/wiki/Comparison_of_email_clients#Communication_and_access_protocol_support
  * */
@@ -28,6 +37,9 @@ export type Protocol =
   | 'IPv6'
   | 'MAPI';
 
+/**
+ * Secure Protocols used by a Platform
+ * */
 export type SecureProtocol =
   | 'SSL'
   | 'TLS'

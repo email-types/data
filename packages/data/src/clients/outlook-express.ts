@@ -11,7 +11,7 @@ export const outlookExpress: Client = {
         'Email client bundled with Windows from Windows 98 until Windows Server 2003. Emails are displayed using the rendering engine from Internet Explorer.',
       kind: 'Windows App',
       engine: 'Trident',
-      doctype: 'Unknown',
+      doctype: { preset: 'Unsure', supports: 'Unsure' },
     },
   ],
 };
