@@ -17,7 +17,7 @@ export const icloud: Client = {
       name: 'iCloud Mail for Windows',
       description:
         "Apple's cloud storage and cloud computing service for Windows",
-      kind: 'Windows App',
+      kind: 'App.Windows',
       engine: 'WebKit',
       doctype: { preset: 'Unsure', supports: 'Unsure' },
     },

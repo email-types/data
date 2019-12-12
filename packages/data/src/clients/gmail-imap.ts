@@ -8,7 +8,7 @@ export const gmailImap: Client = {
     {
       name: 'Gmail IMAP for Android',
       description: '',
-      kind: 'Android Mobile App',
+      kind: 'App.Android.Mobile',
       engine: 'Blink',
       doctype: { preset: 'Unsure', supports: 'Unsure' },
     },

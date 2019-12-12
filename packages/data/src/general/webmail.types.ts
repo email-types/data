@@ -2,7 +2,7 @@ import { Device, Kind } from './features.types';
 import { OperatingSystem } from './operating-systems.types';
 import { UnsureOrType, $Ref } from '../common';
 
-type Name = 'Webmail' | 'Desktop Webmail' | 'Mobile Webmail' | 'Tablet Webmail';
+type Name = 'Webmail' | 'Webmail.Desktop' | 'Webmail.Mobile' | 'Webmail.Tablet';
 
 export interface Webmail {
   kind: Kind;

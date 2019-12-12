@@ -8,7 +8,7 @@ export const blackberry: Client = {
     {
       name: 'Blackberry Mail',
       description: "BlackBerry's default email client.",
-      kind: 'Mobile App',
+      kind: 'App.Mobile',
       engine: 'Unsure',
       doctype: { preset: 'Unsure', supports: 'Unsure' },
     },

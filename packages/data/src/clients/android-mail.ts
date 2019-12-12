@@ -8,7 +8,7 @@ export const androidMail: Client = {
     {
       name: 'Android Mail',
       description: '',
-      kind: 'Android Mobile App',
+      kind: 'App.Android.Mobile',
       engine: 'Blink',
       doctype: {
         preset: 'Unsure',

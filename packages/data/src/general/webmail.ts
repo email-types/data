@@ -8,19 +8,19 @@ export const webmail: Webmail[] = [
     os: 'Universal',
   },
   {
-    name: 'Desktop Webmail',
+    name: 'Webmail.Desktop',
     kind: 'Webmail',
     devices: ['Desktop'],
     os: 'Universal',
   },
   {
-    name: 'Mobile Webmail',
+    name: 'Webmail.Mobile',
     kind: 'Webmail',
     devices: ['Mobile'],
     os: 'Universal',
   },
   {
-    name: 'Tablet Webmail',
+    name: 'Webmail.Tablet',
     kind: 'Webmail',
     devices: ['Tablet'],
     os: 'Universal',
