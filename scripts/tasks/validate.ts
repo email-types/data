@@ -21,14 +21,10 @@ export const command: Command = async (argv) => {
   }
 
   try {
-    const [developers, doctypes] = await Promise.all([
-      interopt('../validations/developers'),
-    ]);
+    const [doctypes] = await Promise.all([interopt('../validations/doctypes')]);
 
-    const results = { developers, doctypes };
+    const results = { doctypes };
     console.log('results', results);
-
-    // console.log(developers, scheme);
   } catch (error) {
     log.error(error);
     process.exit(0);

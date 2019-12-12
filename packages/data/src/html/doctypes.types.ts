@@ -8,9 +8,9 @@ type Name =
   | 'XHTML 1.0 Strict'
   | 'XHTML 1.0 Transitional';
 
-type Element = 'html' | 'svg' | 'math';
+type Element = 'html' | 'HTML';
 
-type Keyword = 'public' | 'system';
+type Keyword = 'PUBLIC' | 'SYSTEM';
 
 export type Doctype = {
   name: Name;

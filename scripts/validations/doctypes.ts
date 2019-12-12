@@ -1,24 +1,18 @@
-import { resolve } from 'path';
-import { outputJson } from 'fs-extra';
 import { doctypes } from '../../packages/data/dist/html/doctypes';
+import { writeToJson } from '../utils/write';
 
 type Result = { result: number };
 
-const clean = (_: string, value: unknown): unknown => {
-  if (value === null || value === '' || value === [] || value === {}) {
-    return undefined;
-  }
-  return value;
-};
+const toKebabCase = (name: string): string =>
+  name.toLowerCase().replace(/\s/g, '-');
 
 export default async (): Promise<Result> => {
   const data = doctypes.reduce((acc, o) => {
-    acc[o.name.toLowerCase().replace(/\s/g, '-')] = o;
+    acc[toKebabCase(o.name)] = o;
     return acc;
   }, {} as Record<string, typeof doctypes[number]>);
 
-  const output = resolve(process.cwd(), 'packages/data/json/doctypes.json');
-  await outputJson(output, data, { replacer: clean });
+  await writeToJson('html/doctypes.json', data);
 
   return { result: doctypes.length };
 };
