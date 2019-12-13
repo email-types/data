@@ -9,7 +9,7 @@
     "clean": "rm -rf ./packages/*/{*.tsbuildinfo,dist}",
     "clean:prune": "rm -rf ./{,*/,**/*/}{node_modules,coverage,*.lock,*.log,*.tsbuildinfo,dist}",
     "build": "yarn clean && lerna run build --stream && yarn types",
-    "validate": "yarn run ts scripts/index.ts",
+    "generate": "yarn run ts scripts/index.ts",
     "ts": "ts-node --project ./tsconfig.node.json",
     "test": "yarn build && yarn lint && yarn jest:coverage",
     "jest": "jest --colors --logHeapUsage",
@@ -69,7 +69,8 @@
     "prettier": "^1.19.1",
     "react": "^16.12.0",
     "ts-node": "^8.5.4",
-    "typescript": "^3.7.2"
+    "typescript": "^3.7.2",
+    "yaml-front-matter": "^4.0.0"
   },
   "keywords": [
     "css-in-js",

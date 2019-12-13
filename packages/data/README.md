@@ -88,3 +88,9 @@ const bar: Bar = {
 Outlook
 
 - [Amp for Email in Outlook.com](https://docs.microsoft.com/en-us/outlook/amphtml/)
+
+Release Notes
+
+- [Thunderbird](https://www.thunderbird.net/en-US/thunderbird/releases/)
+- [Postbox](https://www.postbox-inc.com/product/releasenotes)
+- [Microsoft Office for Mac](https://docs.microsoft.com/en-gb/officeupdates/release-notes-office-for-mac#november-2016-release)
