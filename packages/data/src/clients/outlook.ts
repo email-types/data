@@ -6,6 +6,14 @@ export const outlook: Client = {
   protocols: [],
   platforms: [
     {
+      name: 'Outlook 2000',
+      description:
+        "Outlook email client that is part of Microsoft's Office suites of the same year as well as Exchange 2000 Server. Emails are displayed using the rendering engine from Internet Explorer.",
+      kind: 'App.Windows',
+      engine: 'Trident',
+      doctype: { preset: 'Unsure', supports: 'Unsure' },
+    },
+    {
       name: 'Outlook 2000-2003',
       description:
         "Outlook email client that is part of Microsoft's Office suites of the same years. Emails are displayed using the rendering engine from Internet Explorer.",

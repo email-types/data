@@ -82,3 +82,9 @@ const bar: Bar = {
   boop: 'Bep',
 };
 ```
+
+### Resources, Links
+
+Outlook
+
+- [Amp for Email in Outlook.com](https://docs.microsoft.com/en-us/outlook/amphtml/)

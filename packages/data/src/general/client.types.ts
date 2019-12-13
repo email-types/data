@@ -2,7 +2,7 @@ import { Application } from './application.types';
 import { Developer, Protocol, SecureProtocol } from './features.types';
 import { RenderingEngine } from './rendering-engines.types';
 import { Webmail } from './webmail.types';
-import { Links, $Ref, UnsureOrType, Description } from '../common';
+import { $Ref, Description, Links, UnsureOrType } from '../common';
 import { Doctype } from '../html';
 
 /**
@@ -52,7 +52,7 @@ export interface Client {
   /* Name of the email client */
   name: Name;
   /* Name of the developer */
-  developer: Developer;
+  developer?: Developer;
   /* List of supported protocols */
   protocols: UnsureOrType<(Protocol | SecureProtocol)[]>;
   /* List of supported platforms */

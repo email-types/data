@@ -1,4 +1,16 @@
 /**
+ * Names of email providers
+ * */
+export type Provider =
+  | 'Aol Mail'
+  | 'Gmail'
+  | 'iCloud Mail'
+  | 'Mail.Com'
+  | 'Outlook'
+  | 'Windows Live Mail'
+  | 'Yahoo! Mail';
+
+/**
  * Names of developers
  * */
 export type Developer =
