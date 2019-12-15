@@ -1,6 +1,7 @@
 import mri from 'mri';
 import { Command } from '..';
-import { log, getConfig } from '../utils';
+import * as log from '../utils/log';
+import { getConfig } from '../utils/getConfig';
 import { ProviderName } from '../utils/types';
 import { download } from '../actions/download';
 import { transform } from '../actions/transform';

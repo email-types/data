@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import mri from 'mri';
-import { log } from './utils';
+import * as log from './utils/log';
 
 export type Command = (argv: readonly string[]) => void;
 
@@ -22,7 +22,7 @@ const cmd = foundCmd ? args._[0] : defaultCmd;
 const cmdArgs = foundCmd ? process.argv.slice(3) : process.argv.slice(2);
 
 if (args.help && !foundCmd) {
-  console.info('TODO: `emailtypes --help`');
+  console.info('TODO');
   process.exit(0);
 }
 

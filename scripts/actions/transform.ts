@@ -1,6 +1,7 @@
 import { join } from 'path';
-import { getProvider, log } from '../utils';
+import * as log from '../utils/log';
 import { readdir, outputJson } from '../utils/fs';
+import { getProvider } from '../utils/getProvider';
 import { Config, ProviderName } from '../utils/types';
 
 type Results = {

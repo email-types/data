@@ -1,6 +1,6 @@
 import proc from 'child_process';
 import { promisify } from 'util';
-import { log } from '../utils';
+import * as log from '../utils/log';
 import { Config, ProviderName } from '../utils/types';
 
 type Options = {

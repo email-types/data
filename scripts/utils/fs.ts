@@ -1,4 +1,5 @@
 import fs from 'fs-extra';
+import { safeLoadFront } from 'yaml-front-matter';
 import * as log from './log';
 
 const jsonCleaner = (_: string, value: unknown): unknown => {
@@ -36,4 +37,21 @@ export const readdir = async (
   return filter
     ? filenames.filter((filename) => filter.test(filename))
     : filenames;
+};
+
+export const readMd = async <T>(filepath: string): Promise<T> => {
+  let data: T;
+
+  try {
+    const content = await fs.readFile(filepath, 'utf8');
+    data = await safeLoadFront(content);
+    return data;
+  } catch (err) {
+    if (err.name === 'YAMLException') {
+      const error = Error(err.name);
+      error.message = `${err.reason} found at line ${err.mark.line} in ${filepath}`;
+      throw error;
+    }
+    throw err;
+  }
 };
