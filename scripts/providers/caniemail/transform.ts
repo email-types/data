@@ -1,33 +1,18 @@
-import { readMd } from '../../utils/fs';
+import { ProviderTransformer } from '../../utils/provider';
+import { RawData, ResolvedData } from './config';
 
-type Data = {
-  category?: 'css' | 'html';
-  description?: string;
-  keywords?: string;
-  last_test_date?: string;
-  links?: Record<string, string>;
-  notes?: string;
-  notes_by_num?: Record<string, string>;
-  stats: {};
-  test_results_url?: string;
-  test_url?: string;
-  title?: string;
-};
-
-export const transform = async (filepath: string): Promise<object> => {
-  const data = await readMd<Data>(filepath);
-
-  const feature = {
+export const transform: ProviderTransformer<RawData, ResolvedData> = async (
+  data,
+) => {
+  return {
     title: data.title || '',
     description: data.description || '',
-    categories: data.category,
+    categories: [data.category.toUpperCase()] as ResolvedData['categories'],
     spec: '',
-    links: data.links,
+    links: data.links || {},
     bugs: [],
     stats: data.stats,
     notes: data.notes || '',
     notesByNum: data.notes_by_num || {},
   };
-
-  return feature;
 };

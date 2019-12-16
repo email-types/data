@@ -1,14 +1,12 @@
 import mri from 'mri';
 import { Command } from '..';
 import * as log from '../utils/log';
-import { getConfig } from '../utils/getConfig';
-import { ProviderName } from '../utils/types';
-import { download } from '../actions/download';
-import { transform } from '../actions/transform';
+import { ProviderName } from '../utils/provider';
+import { generate } from '../generate';
 
 export const command: Command = async (argv) => {
   const args = mri(argv, {
-    alias: { c: 'cwd', d: 'download', f: 'force', h: 'help' },
+    alias: { c: 'cwd', d: 'download', h: 'help' },
     boolean: ['download', 'help', 'force'],
     string: ['cwd'],
     default: { cwd: process.cwd(), download: false, force: false },
@@ -17,13 +15,20 @@ export const command: Command = async (argv) => {
   const name = (args._[0] || 'caniemail') as ProviderName;
 
   try {
-    const config = await getConfig(name, { cwd: args.cwd });
+    log.info(`Generating data from ${name}`);
 
-    if (args.download) {
-      await download(name, config, { force: args.force });
+    const results = await generate(name, {
+      cwd: args.cwd,
+      download: args.download,
+    });
+
+    if (results.warnings.length > 0) {
+      log.warn(
+        `You should fix the following issues:\n${results.warnings.join('\n')}`,
+      );
     }
 
-    await transform(name, config);
+    log.done(`Successfully wrote ${results.outputs.length} files to json`);
   } catch (error) {
     log.error(error);
     process.exit(0);

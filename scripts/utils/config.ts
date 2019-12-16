@@ -1,6 +1,12 @@
 import { resolve } from 'path';
-import { getProvider } from './getProvider';
-import { Config, ProviderName } from './types';
+import { Provider } from './provider';
+
+export type Config = {
+  dataUrl: string;
+  dataDist: string;
+  transformDist: string;
+  transformFilter: RegExp;
+};
 
 type Options = {
   cwd?: string;
@@ -8,12 +14,11 @@ type Options = {
 };
 
 export const getConfig = async (
-  name: ProviderName,
+  provider: Provider,
   opts: Options,
 ): Promise<Config> => {
   const { cwd = process.cwd() } = opts;
 
-  const provider = getProvider(name);
   const {
     dataUrl,
     dataDist,
@@ -23,8 +28,8 @@ export const getConfig = async (
 
   return {
     dataUrl,
-    dataDist: resolve(cwd, '.data', name, dataDist),
-    transformDist: resolve(cwd, '.data', name, transformDist),
+    dataDist: resolve(cwd, '.data', provider.name, dataDist),
+    transformDist: resolve(cwd, '.data', provider.name, transformDist),
     transformFilter: transformIgnore
       ? RegExp(`^(?!(${transformIgnore.join('|')})).*.md$`)
       : RegExp('.*.md$'),
