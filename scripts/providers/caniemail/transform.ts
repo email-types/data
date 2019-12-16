@@ -1,4 +1,4 @@
-import { ProviderTransformer } from '../../utils/provider';
+import { ProviderTransformer } from '../../utils';
 import { RawData, ResolvedData } from './config';
 
 export const transform: ProviderTransformer<RawData, ResolvedData> = async (

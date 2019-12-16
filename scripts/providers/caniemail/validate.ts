@@ -1,8 +1,7 @@
 import { ResolvedData } from './config';
-import { is } from '../../utils/is';
-import { ProviderValidator } from '../../utils/provider';
+import { is, ProviderValidator } from '../../utils';
 
-const title = (data: ResolvedData) => {
+const title = (data: ResolvedData): string | undefined => {
   if (is.undef(data.title)) {
     return 'missing title';
   }
@@ -14,37 +13,37 @@ const title = (data: ResolvedData) => {
   }
 };
 
-const description = (data: ResolvedData) => {
+const description = (data: ResolvedData): string | undefined => {
   if (is.undef(data.description) && !is.string(data.description)) {
     return 'invalid description';
   }
 };
 
-const notes = (data: ResolvedData) => {
+const notes = (data: ResolvedData): string | undefined => {
   if (is.notUndef(data.notes) && !is.string(data.notes)) {
     return 'invalid notes';
   }
 };
 
-const notesByNum = (data: ResolvedData) => {
+const notesByNum = (data: ResolvedData): string | undefined => {
   if (is.notUndef(data.notesByNum) && !is.object(data.notesByNum)) {
     return 'invalid notes by num';
   }
 };
 
-const categories = (data: ResolvedData) => {
+const categories = (data: ResolvedData): string | undefined => {
   if (is.notUndef(data.categories) && !is.array(data.categories)) {
     return 'invalid categories';
   }
 };
 
-const links = (data: ResolvedData) => {
+const links = (data: ResolvedData): string | undefined => {
   if (is.notUndef(data.links) && !is.object(data.links)) {
     return 'invalid links';
   }
 };
 
-const stats = (data: ResolvedData) => {
+const stats = (data: ResolvedData): string | undefined => {
   if (is.undef(data.stats)) {
     return 'missing stats';
   }
@@ -66,5 +65,5 @@ export const validate: ProviderValidator<ResolvedData> = (data) => {
     .map((fn) => fn(data))
     .filter(Boolean);
 
-  return warnings as string[];
+  return { warnings } as Record<'warnings', string[]>;
 };

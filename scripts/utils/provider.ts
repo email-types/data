@@ -1,3 +1,5 @@
+import { resolve } from 'path';
+
 export type ProviderName = 'caniemail';
 
 export type ProviderConfig = {
@@ -12,20 +14,38 @@ export type ProviderTransformer<
   U extends object = any
 > = (data: T) => Promise<U>;
 
-export type ProviderValidator<T extends object = any> = (data: T) => string[];
+export type ProviderValidator<T extends object = any> = (
+  data: T,
+) => Record<'warnings', string[]>;
 
-export type Provider = {
+export type Provider = Omit<ProviderConfig, 'transformIgnore'> & {
   name: ProviderName;
-  config: () => Promise<ProviderConfig>;
+  transformFilter: RegExp;
   transform: () => Promise<ProviderTransformer>;
   validate: () => Promise<ProviderValidator>;
 };
 
-export const getProvider = (name: ProviderName): Provider => {
+type Options = {
+  cwd?: string;
+  download?: boolean;
+};
+
+export const getProvider = async (
+  name: ProviderName,
+  opts: Options,
+): Promise<Provider> => {
+  const { config } = await import(`../providers/${name}/config`);
+  const { dataUrl, dataDist, transformDist, transformIgnore = [] } = config;
+  const { cwd = process.cwd() } = opts;
+
   return {
     name,
-    config: async (): Promise<ProviderConfig> =>
-      import(`../providers/${name}/config`).then((p) => p.config),
+    dataUrl,
+    dataDist: resolve(cwd, '.data', name, dataDist),
+    transformDist: resolve(cwd, '.data', name, transformDist),
+    transformFilter: transformIgnore
+      ? RegExp(`^(?!(${transformIgnore.join('|')})).*.md$`)
+      : RegExp('.*.md$'),
     transform: async (): Promise<ProviderTransformer> =>
       import(`../providers/${name}/transform`).then((p) => p.transform),
     validate: async (): Promise<ProviderValidator> =>
