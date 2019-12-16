@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.0.0-canary.4 - 2019-12-16
+
+#### 🚀 Updates
+
+- Doctypes api and verification (#13)
+  ([61539b8](https://github.com/email-types/email-types/commit/61539b8)), closes
+  [#13](https://github.com/email-types/email-types/issues/13)
+
+**Note:** Version bump only for package @email-types/data
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
 ## 1.0.0-canary.3 - 2019-12-03
 
 #### 🚀 Updates
