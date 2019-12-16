@@ -37,11 +37,5 @@ module.exports = {
         '@typescript-eslint/no-empty-function': 'off',
       },
     },
-    {
-      files: ['scripts/**/*'],
-      rules: {
-        'no-console': 'off',
-      },
-    },
   ],
 };

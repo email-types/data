@@ -1,5 +1,5 @@
 module.exports = {
-  collectCoverageFrom: ['packages/*/src/**/*.ts', 'scripts/**/*.ts'],
+  collectCoverageFrom: ['packages/*/src/**/*.ts'],
   coverageDirectory: 'coverage',
   coverageThreshold: {
     global: {
@@ -14,5 +14,5 @@ module.exports = {
   moduleNameMapper: {
     '@email-types/(.+)$': '<rootDir>/packages/$1',
   },
-  roots: ['<rootDir>/packages', '<rootDir>/scripts'],
+  roots: ['<rootDir>/packages'],
 };
