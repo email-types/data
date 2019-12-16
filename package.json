@@ -9,8 +9,6 @@
     "clean": "rm -rf ./packages/*/{*.tsbuildinfo,dist}",
     "clean:prune": "rm -rf ./{,*/,**/*/}{node_modules,coverage,*.lock,*.log,*.tsbuildinfo,dist}",
     "build": "yarn clean && lerna run build --stream && yarn types",
-    "gen": "yarn run ts scripts/index.ts",
-    "ts": "ts-node --project ./tsconfig.node.json",
     "test": "yarn build && yarn lint && yarn jest:coverage",
     "jest": "jest --colors --logHeapUsage",
     "jest:coverage": "yarn run jest --coverage",
@@ -50,7 +48,6 @@
     "@types/prettier": "^1.19.0",
     "@typescript-eslint/eslint-plugin": "^2.7.0",
     "@typescript-eslint/parser": "^2.7.0",
-    "colors": "^1.4.0",
     "conventional-changelog-beemo": "^1.5.3",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.6.0",
@@ -65,10 +62,8 @@
     "jest": "^24.9.0",
     "lerna": "^3.18.4",
     "lint-staged": "^10.0.0-1",
-    "mri": "^1.1.4",
     "prettier": "^1.19.1",
     "react": "^16.12.0",
-    "ts-node": "^8.5.4",
     "typescript": "^3.7.2"
   },
   "keywords": [
