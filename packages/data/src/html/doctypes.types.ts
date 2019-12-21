@@ -1,4 +1,4 @@
-import { Nullable, Description } from '../common';
+import { Nullable, Description } from '../common.types';
 
 type Name =
   | 'HTML 5'
