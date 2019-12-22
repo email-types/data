@@ -1,6 +1,6 @@
 {
   "name": "@email-types/data",
-  "version": "1.0.0-canary.4",
+  "version": "1.0.0-canary.5",
   "description": "@email-types/data",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+### 1.0.0-canary.5 - 2019-12-22
+
+#### 📋 Misc
+
+- Adds initial css data & scripts pkg, updates deps & readme, and cleanup (#14)
+  ([60d53bd](https://github.com/email-types/email-types/commit/60d53bd)), closes
+  [#14](https://github.com/email-types/email-types/issues/14)
+
+**Note:** Version bump only for package @email-types/data
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
 ## 1.0.0-canary.4 - 2019-12-16
 
 #### 🚀 Updates
