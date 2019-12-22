@@ -1,9 +1,6 @@
-import { create } from '../utils/create';
-import * as MSO from '../types/mso';
+import { Operators } from './operators.types';
 
-const validate = create<MSO.Operator>();
-
-export const operators = validate({
+export const operators: Operators = {
   and: {
     syntax: '&',
     description:
@@ -16,7 +13,7 @@ export const operators = validate({
       },
     ],
   },
-  greaterThan: {
+  greater: {
     syntax: 'gt',
     description:
       'The greater-than operator. Returns true if the first argument is greater than the second argument.',
@@ -28,7 +25,7 @@ export const operators = validate({
       },
     ],
   },
-  greaterThanOrEqual: {
+  greaterOrEqual: {
     syntax: 'gte',
     description:
       'The greater-than or equal operator. Returns true if the first argument is greater than or equal to the second argument.',
@@ -40,7 +37,7 @@ export const operators = validate({
       },
     ],
   },
-  lessThan: {
+  less: {
     syntax: 'lt',
     description:
       'The less-than operator. Returns true if the first argument is less than the second argument.',
@@ -52,7 +49,7 @@ export const operators = validate({
       },
     ],
   },
-  lessThanOrEqual: {
+  lessOrEqual: {
     syntax: 'lte',
     description:
       'The less-than or equal operator. Returns true if the first argument is less than or equal to the second argument.',
@@ -88,6 +85,4 @@ export const operators = validate({
       },
     ],
   },
-});
-
-export default operators;
+};

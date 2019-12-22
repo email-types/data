@@ -6,8 +6,10 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist",
-    "doctypes.d.ts",
-    "doctypes.js",
+    "css.d.ts",
+    "css.js",
+    "html.d.ts",
+    "html.js",
     "mso.d.ts",
     "mso.js"
   ],
