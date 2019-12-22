@@ -5,6 +5,7 @@ on:
       - '*'
       - '*/*'
       - '!master'
+      - '!canary'
 jobs:
   test:
     runs-on: ubuntu-latest

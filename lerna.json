@@ -5,8 +5,8 @@
   "command": {
     "version": {
       "exact": true,
-      "ignoreChanges": ["*.md"],
-      "message": "Release"
+      "ignoreChanges": ["*.md", "*.test.ts"],
+      "message": "release"
     },
     "publish": {
       "npmClient": "npm",
