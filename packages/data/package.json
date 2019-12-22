@@ -14,13 +14,8 @@
     "mso.js"
   ],
   "scripts": {
-    "postbuild": "rm -rf dist/css/data-types/index.js && ncc build ../../node_modules/mdn-data/css/types.json -o dist/css/data-types",
     "build": "babel --root-mode upward -x .ts,.tsx src -d dist",
     "dev": "babel --root-mode upward -x .ts,.tsx src -d dist -w"
-  },
-  "devDependencies": {
-    "@zeit/ncc": "^0.20.5",
-    "mdn-data": "^2.0.6"
   },
   "publishConfig": {
     "access": "public"

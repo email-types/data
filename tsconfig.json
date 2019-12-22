@@ -1,5 +1,5 @@
 {
   "extends": "./tsconfig.options.json",
   "files": [],
-  "references": [{ "path": "packages/data" }]
+  "references": [{ "path": "packages/data" }, { "path": "packages/scripts" }]
 }

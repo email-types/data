@@ -1,5 +1,3 @@
-import { as } from '../../common';
-
 export interface DataType {
   groups: string[];
   status: 'standard' | 'nonstandard' | 'experimental';
@@ -10,6 +8,6 @@ export interface DataTypes {
   [name: string]: DataType;
 }
 
-// Populated via ncc during the build pipeline.
+// Populated via @email-types/scripts during the build pipeline.
 // This cannot be a named export or it will not work.
-export default as<DataTypes>({});
+export const dataTypes: DataType = {} as DataType;

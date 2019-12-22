@@ -1,6 +1,5 @@
-[msotype]: https://github.com/email-types/email-types/msotype
-[stylis-plugin-mso]:
-  https://github.com/email-types/email-types/stylis-plugin-mso
+[msotype]: https://github.com/email-types/msotype
+[stylis-plugin-mso]: https://github.com/email-types/stylis-plugin-mso
 
 # Email Types Data
 
@@ -13,11 +12,21 @@ yarn add --dev @email-types/data
 
 ## Data
 
-|                 | Description                                            | Exports                                                                              |
-| :-------------- | :----------------------------------------------------- | :----------------------------------------------------------------------------------- |
-| [**mso**](#mso) | Data about the different features of the MSO language. | • `properties` <br> • `syntaxes` <br> • `operators` <br> • `types` <br> • `versions` | `AlternativePropertiesHyphen` |
-| **features**    | _todo_                                                 | _todo_                                                                               |
-| **providers**   | _todo_                                                 | _todo_                                                                               |
+|                           | Description                                            | Exports                                                                              |
+| :------------------------ | :----------------------------------------------------- | :----------------------------------------------------------------------------------- |
+| [**css**](#css)           | _todo_                                                 | _todo_                                                                               |
+| [**mso**](#mso)           | Data about the different features of the MSO language. | • `properties` <br> • `syntaxes` <br> • `operators` <br> • `types` <br> • `versions` | `AlternativePropertiesHyphen` |
+| [**html**](#html)         | _todo_                                                 | _todo_                                                                               |
+| [**features**](#features) | _todo_                                                 | _todo_                                                                               |
+| [**clients**](#clients)   | _todo_                                                 | _todo_                                                                               |
+
+### CSS
+
+...todo
+
+### Html
+
+...todo
 
 ### MSO
 
@@ -58,3 +67,11 @@ values that can be used by MSO properties.
 
 MSO version vectors that map to specific Outlook clients. This is commonly used
 to target specific versions of Outlook with conditional comments.
+
+### Features
+
+...todo
+
+### Clients
+
+...todo
