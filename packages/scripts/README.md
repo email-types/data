@@ -1,29 +1,38 @@
+<div align="center">
+
 # Email Types Scripts
 
-Scripts used across @email-types.
+Scripts used to manage the @email-types monorepo.
 
-## Tasks
+_this package is not published_
 
-```sh
-yarn tasks <taskname> [options]
-```
+</div>
 
-**Tasknames**
+---
 
-- [transfer](#transfer) (default)
+| Scripts                       | Description                                                                 |
+| ----------------------------- | --------------------------------------------------------------------------- |
+| [**build**](#build)           | All tasks that should be run during the build process.                      |
+| [**prerelease**](#prerelease) | All tasks that should be run after `build` but prior to releasing packages. |
 
-**Options**
-
-```sh
--c --cwd   Current working directory (default: process.cwd())
--h --help  Shows this help message
-```
-
-## Transfer Task
+## Build
 
 ```sh
-yarn tasks transfer
+yarn build
 ```
 
-Transfers data from `mdn-data` to the `@email-types/data` package. This reduces
-overall file size since we include only what we need.
+**Tasks**
+
+- Transfers data from `mdn-data` to the `@email-types/data` package, reducing
+  overall package size since we include only what's needed.
+
+## Prerelease
+
+```sh
+yarn prerelease
+```
+
+**Tasks**
+
+- Automatically removes empty `*.js` files from the `@email-types/data` dist,
+  reducing overall package size.
