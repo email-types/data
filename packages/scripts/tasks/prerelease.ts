@@ -1,10 +1,11 @@
-import { removeEmpty } from '../prerelease/removeEmpty';
+import optimize from '../prerelease/optimize';
 import { log } from '../utils';
 
 (async (): Promise<void> => {
   try {
     log.info('Running prerelease task...');
-    await removeEmpty('data');
+
+    await optimize('data');
     log.done('Successfully ran prerelease task');
   } catch (error) {
     log.error(error);
