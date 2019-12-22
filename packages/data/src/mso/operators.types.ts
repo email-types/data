@@ -1,4 +1,4 @@
-import { Links, Description } from '../common.types';
+import { Links, Description } from '../common';
 
 export type Operator = {
   syntax: string;

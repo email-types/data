@@ -1,5 +1,5 @@
 import { Groups } from './groups';
-import { Nullable, Description } from '../common.types';
+import { Nullable, Description } from '../common';
 
 export type Property = {
   syntax: string;
