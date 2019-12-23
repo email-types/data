@@ -1,4 +1,4 @@
-import { transfer } from '../transfer';
+import { transfer } from '../build/transfer';
 import { log } from '../utils';
 
 const pkgs = [

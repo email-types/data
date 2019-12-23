@@ -1,4 +1,4 @@
-import optimize from '../prerelease/optimize';
+import { optimize } from '../prerelease/optimize';
 import { log } from '../utils';
 
 (async (): Promise<void> => {

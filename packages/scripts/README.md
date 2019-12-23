@@ -34,7 +34,7 @@ yarn prerelease
 
 **Tasks**
 
-- Automatically merge `*.types.d.ts` files with matched `.d.ts` files in
+- Automatically merges `*.types.d.ts` files with matched `.d.ts` files in
   `@email-types/data` dist, reducing overall package size.
-- Automatically remove empty `*.js` and unused `*.types.d.ts` files from the
+- Automatically removes empty `*.js` and unused `*.types.d.ts` files from the
   `@email-types/data` dist, reducing overall package size.

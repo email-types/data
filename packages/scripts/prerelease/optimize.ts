@@ -1,61 +1,43 @@
 import fs from 'fs-extra';
 import glob from 'tiny-glob';
-import { log, getPackagePath, Filtered, Package } from '../utils';
+import { log, getPackagePath, Package } from '../utils';
 
-const extension = '.types';
+const extensions = 'types';
 
-const patternImport = RegExp(
-  `import(?:["'\\s]*[\\w*\\$\\{\\}\n\r\t, ]+from\\s*)?["'\\s]["'\\s](.*[@\\w_-]+\\${extension})["'\\s].*;$`,
+const importPattern = RegExp(
+  `import(?:["'\\s]*[\\w*\\$\\{\\}\n\r\t, ]+from\\s*)?["'\\s]["'\\s](.*[@\\w_-]+\\.${extensions})["'\\s].*;$`,
   'gmi',
 );
 
-type ParsedFile = Record<'target' | 'source' | 'empty', string>;
+const clean = async (target: string): Promise<boolean> => {
+  const source = target.replace('.d.ts', `.${extensions}.d.ts`);
 
-const parse = (filepath: string): ParsedFile => ({
-  target: filepath.replace(extension, ''),
-  empty: filepath.replace('.d.ts', '.js'),
-  source: filepath,
-});
+  if (fs.existsSync(source)) {
+    const content = await fs.readFile(target, 'utf-8');
+    const [match] = content.match(importPattern) || [];
 
-const clean = (content: string): string => {
-  return content.replace('export {};', '').trim();
-};
+    if (match) {
+      const types = await fs.readFile(source, 'utf-8');
+      const next = content.replace(match, types.replace('export {};\n', ''));
 
-const merge = async (filepath: string): Promise<ParsedFile | undefined> => {
-  const parsed = parse(filepath);
-
-  const targetContent = await fs.readFile(parsed.target, 'utf-8');
-  const match = targetContent.match(patternImport);
-
-  if (match !== null && match[0].length > 0) {
-    const sourceContent = await fs.readFile(parsed.source, 'utf-8');
-    const content = targetContent.replace(match[0], clean(sourceContent));
-
-    await fs.outputFile(parsed.target, content);
-    return parsed;
+      await fs.outputFile(target, next);
+      await fs.remove(source);
+      await fs.remove(source.replace('.d.ts', '.js'));
+      return true;
+    }
   }
+
+  return false;
 };
 
-const remove = async ({ empty, source }: ParsedFile): Promise<string> => {
-  await Promise.all([empty, source].map((f) => fs.remove(f)));
-  return source;
-};
-
-const optimize = async (pkg: Package): Promise<void> => {
-  const files = await glob(`**/*${extension}.d.ts`, {
+export const optimize = async (pkg: Package): Promise<void> => {
+  const filepaths = await glob(`**/*.d.ts`, {
     cwd: getPackagePath(pkg, 'dist'),
     absolute: true,
   });
 
   log.wait(`Merging '*.types.d.ts' files with '*.d.ts'...`);
-  const merged = await Promise.all(files.map(merge));
+  const results = await Promise.all(filepaths.map(clean));
 
-  log.wait(`Removing merged type declaration files...`);
-  const removed = await Promise.all(
-    merged.filter((Boolean as unknown) as Filtered).map(remove),
-  );
-
-  log.done(`Optimized dist by removing ${removed.length} files`);
+  log.done(`Optimized ${results.filter(Boolean).length} declaration files`);
 };
-
-export default optimize;
