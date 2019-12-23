@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.0.0-canary.2 - 2019-12-23
+
+#### 🚀 Updates
+
+- Merge _.types.d.ts files into matching _.d.ts files during release (#16)
+  ([b20edac](https://github.com/email-types/email-types/commit/b20edac)), closes
+  [#16](https://github.com/email-types/email-types/issues/16)
+
+**Note:** Version bump only for package @email-types/scripts
+
+# Change Log
+
+All notable changes to this project will be documented in this file. See
+[Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
 ## 1.0.0-canary.1 - 2019-12-22
 
 #### 🚀 Updates
