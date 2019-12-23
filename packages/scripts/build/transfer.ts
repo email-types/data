@@ -21,7 +21,7 @@ const createTemplate = <T extends object = {}>(
     `exports.${name} = ${name};`,
   ];
 
-  return content.join(`${EOL}${EOL}`);
+  return content.join(`${EOL}`);
 };
 
 const createTransport = (pkg: Package) => async (

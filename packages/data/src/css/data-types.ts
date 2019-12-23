@@ -1,12 +1,10 @@
-export interface DataType {
+export type DataType = {
   groups: string[];
   status: 'standard' | 'nonstandard' | 'experimental';
   mdn_url?: string;
-}
+};
 
-export interface DataTypes {
-  [name: string]: DataType;
-}
+export type DataTypes = Record<string, DataType>;
 
 // Populated via @email-types/scripts during the build pipeline.
 // This cannot be a named export or it will not work.
