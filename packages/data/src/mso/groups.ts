@@ -1,5 +1,5 @@
 // TODO: Add CssGroups
-export type Groups =
+export type Group =
   | 'MSO Animations'
   | 'MSO Borders'
   | 'MSO Colors'
@@ -18,4 +18,6 @@ export type Groups =
   | 'MSO Table Cells'
   | 'MSO Tracking'
   | 'MSO Whitespace'
-  | 'MSO Worksheets';
+  | 'MSO Worksheets'
+  | 'ARIA 1.1'
+  | 'ARIA 1.2';

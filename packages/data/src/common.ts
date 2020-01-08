@@ -6,5 +6,3 @@ export type Links = Readonly<{
 }>[];
 
 export type Nullable<T> = T | null;
-
-export const as = <T>(value: T): T => value;

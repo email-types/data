@@ -1,4 +1,4 @@
-import { Groups } from './groups';
+import { Group } from './groups';
 import { Nullable, Description } from '../common';
 
 export type Property = {
@@ -7,7 +7,7 @@ export type Property = {
   initial: Nullable<string | number>;
   inherited: boolean;
   shorthand: boolean;
-  groups?: Groups[];
+  groups?: Group[];
 };
 
 export type Properties = Record<string, Property>;
